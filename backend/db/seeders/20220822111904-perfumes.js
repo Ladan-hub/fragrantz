@@ -16,19 +16,19 @@ module.exports = {
       },
       {
         userId: 1,
-        name: 'Elysium Pour Homme Parfum Cologne',
-        brand: 'Roja Parfums',
-        masterPerfumer: "Roja Dove",
-        perfumeImg: "https://media.karousell.com/media/photos/products/2021/9/17/roja_elysium_parfum_cologne_10_1631871838_1aca08ff_progressive.jpg",
+        name: 'Ombré Leather',
+        brand: 'Tom Ford',
+        masterPerfumer: "Sonia Constant",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11383852040222/TOM-FORD-Parfum-888066122214-Ombr-Leather.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         userId: 1,
-        name: "Angels' Share",
-        brand: 'by Kilian',
-        masterPerfumer: "Benoist Lapouza",
-        perfumeImg: "https://cosmetiqua.com/wp-content/uploads/2020/12/kilian-angels-share-001_1500.jpg",
+        name: "Scandal Pour Homme",
+        brand: 'Jean Paul Gaultier',
+        masterPerfumer: "Christophe Raynaud, Natalie Gracia-Cetto, Quentin Bisch",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11396508090398/Jean-Paul-Gaultier-Eau-de-Toilette-Refillable-Spray-8435415030885-Scandal-Pour-Homme.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -43,28 +43,28 @@ module.exports = {
       },
       {
         userId: 1,
-        name: "The One for Men Eau de Parfum",
-        brand: 'Dolce&Gabbana',
-        masterPerfumer: "Olivier Polge",
-        perfumeImg: "https://slimages.macysassets.com/is/image/MCY/products/3/optimized/21816783_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1",
+        name: "Polo Blue",
+        brand: 'Ralph Lauren',
+        masterPerfumer: "Carlos Benaim",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/10935640883230/Ralph-Lauren-Eau-de-Parfum-for-him-3605970859299-Polo-Blue.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         userId: 1,
-        name: "Pi",
-        brand: 'Givenchy',
-        masterPerfumer: "Alberto Morillas",
-        perfumeImg: "https://www.dapperconfidential.com/wp-content/uploads/2022/01/Givenchy-Pi-EDT.jpg",
+        name: "Le Male Le Parfum",
+        brand: 'Jean Paul Gaultier',
+        masterPerfumer: "Natalie Gracia-Cetto, Quentin Bisch",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11613059022878/Jean-Paul-Gaultier-Eau-de-Parfum-for-him-8435415032278-Le-Male-Le-Parfum.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         userId: 1,
-        name: "Tobacco Vanille",
+        name: "Costa Azzurra",
         brand: 'Tom Ford',
         masterPerfumer: "Olivier Gillotin",
-        perfumeImg: "https://scentgrail.com/wp-content/uploads/2022/07/Tom-Ford-Tobacco-Vanille-Bottle-and-Cap-1024x683.jpg",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11240439250974/TOM-FORD-Eau-de-Parfum-888066119320-Costa-Azzurra.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -88,10 +88,10 @@ module.exports = {
       },
       {
         userId: 2,
-        name: "Vanilla Orchid",
-        brand: 'Precious Liquid',
-        masterPerfumer: "Richard Herpin",
-        perfumeImg: "https://i.pinimg.com/originals/0d/22/ea/0d22ead859603fc30f31b57846a36d71.jpg",
+        name: "Bonbon",
+        brand: 'Viktor&Rolf',
+        masterPerfumer: "Cecile Matton, Serge Majoullier",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11356140371998/Viktor-Rolf-Eau-de-Parfum-for-her-3605521880147-Bonbon.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -132,15 +132,6 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 2,
-        name: "Acqua di Gio",
-        brand: 'Giorgio Armani',
-        masterPerfumer: "Alberto Morillas, Annick Menardo, Christian Dussoulier",
-        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11533218021406/Eau-de-Toilette-for-him-1024165.jpg",
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
         userId: 3,
         name: "Light Blue Eau Intense Pour Homme",
         brand: 'Dolce&Gabbana',
@@ -151,28 +142,28 @@ module.exports = {
       },
       {
         userId: 3,
-        name: "Silver Mountain Water",
-        brand: 'Creed',
-        masterPerfumer: "Olivier Creed, Pierre Bourdon",
-        perfumeImg: "https://image.s5a.com/is/image/saks/0400094465496_NOCOLOR_A1?wid=480&hei=640&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0",
+        name: "Patchouli Ardent",
+        brand: 'Guerlain',
+        masterPerfumer: "Thierry Wasser",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11407101296670/Guerlain-Eau-de-Parfum-Spray-3346470140189-Patchouli-Ardent.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         userId: 3,
-        name: "Tuxedo",
-        brand: 'Yves Saint Laurent',
-        masterPerfumer: "Juliette Karagueuzoglou",
-        perfumeImg: "https://www.qatardutyfree.com/Images/DB/CA_479.jpg",
+        name: "Stronger with You",
+        brand: 'Emporio Armani',
+        masterPerfumer: "Cecile Matton",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11234440708126/Armani-Eau-de-Toilette-for-him-3605522040281-Stronger-With-You.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         userId: 3,
-        name: "Dior Homme Intense",
-        brand: 'Dior',
-        masterPerfumer: "Francois Demachy",
-        perfumeImg: "https://www.dapperconfidential.com/wp-content/uploads/2022/04/Dior-Homme-Intense-EDP-Banner-Image-720x540.jpg",
+        name: "Luna Rossa Ocean",
+        brand: 'Prada',
+        masterPerfumer: "Anne Flipo, Carlos Benaim",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11378122588190/Prada-Eau-de-Toilette-Spray-3614273556187-Luna-Rossa-Ocean.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -196,10 +187,10 @@ module.exports = {
       },
       {
         userId: 3,
-        name: "Eros",
+        name: "Pour Homme",
         brand: 'Versace',
-        masterPerfumer: "Aurelien Guichard",
-        perfumeImg: "https://static1.michael84.co.uk/wp-content/uploads/versace-eros-eau-de-toilette-fragrance-men-michael84.jpg",
+        masterPerfumer: "Alberto Morillas",
+        perfumeImg: "https://www.theperfumeshop.com/medias/sys_master/back-zoom/back-zoom/11260728803358/Versace-Eau-de-Toilette-for-him-8011003995967-Pour-Homme.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       },

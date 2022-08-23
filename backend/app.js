@@ -12,6 +12,7 @@ const { ValidationError } = require('sequelize');
 const { environment } = require('./config');
 const isProduction = environment === 'production';
 
+
 const app = express();
 
 app.use(morgan('dev'));
@@ -78,9 +79,6 @@ app.use((err, _req, res, _next) => {
 });
 
 
-
-
- 
 
 // More will come later
 

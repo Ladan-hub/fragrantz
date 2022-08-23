@@ -1,0 +1,20 @@
+/* .greeting-message {
+    size: 20px;
+
+} */
+
+.container {
+    width: 20%;
+    height: 20%;
+}
+
+.perfume-image {
+    width: 30%;
+    height: 30%;
+    margin: 0.3%;
+}
+
+.all-perfumes {
+    margin: 5%;
+}
+
