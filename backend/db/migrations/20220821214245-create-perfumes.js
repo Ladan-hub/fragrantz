@@ -15,19 +15,19 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(250)
       },
       brand: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(250)
       },
       masterPerfumer: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(250)
       },
       perfumeImg: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(500)
       },
       createdAt: {
         allowNull: false,

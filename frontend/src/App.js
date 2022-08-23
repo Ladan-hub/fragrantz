@@ -4,6 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Perfume from "./components/Perfumes/index";
+import PerfumeDetail from "./components/PerfumeDetail";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +21,12 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/">
+            <Perfume />
+          </Route>
+          <Route path="/perfumes/:perfumeId">
+            <PerfumeDetail />
           </Route>
         </Switch>
       )}
