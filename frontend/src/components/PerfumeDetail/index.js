@@ -26,9 +26,11 @@ const PerfumeDetail = () => {
     dispatch(fetchDetail(perfumeId));
   }, [dispatch, perfumeId]);
 
-  const deleteEventHandler = () => {
-    dispatch(perfumeDelete(perfume))
-    history.push('/')
+  const deleteEventHandler = async () => {
+    const deletedPerfume = await dispatch(perfumeDelete(perfume))
+    if (deletedPerfume) {
+      history.push('/')
+    }
   }
 
 

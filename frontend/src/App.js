@@ -6,7 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Perfume from "./components/Perfumes/index";
 import PerfumeDetail from "./components/PerfumeDetail";
-import PerfumeForm from "./components/PerfumeForm/index";
+import PerfumeForm from "./components/CreatePerfumeForm/index";
 
 function App() {
   const dispatch = useDispatch();
