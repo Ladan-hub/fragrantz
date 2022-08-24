@@ -1,9 +1,10 @@
 import { csrfFetch } from "./csrf";
 
 // Action Type Variables
-//initial load
+
 const LOAD_PERFUMES = "perfumes/LOAD";
 const LOAD_DETAIL = "perfume/DETAIL";
+const CREATE = "perfume/CREATE";
 
 // ACTION CREATORS:
 
@@ -22,6 +23,15 @@ export const loadDetail = (perfume) => {
     perfume,
   };
 };
+
+// AC for CREATE 
+export const createPerfume = (perfume) => {
+  return {
+      type: CREATE,
+      perfume
+  }
+}
+
 
 // THUNK ACTION CREATORS:
 
@@ -46,6 +56,21 @@ export const fetchDetail = (perfumeId) => async (dispatch) => {
   }
 };
 
+// Thunk AC for sending CREATE data to the db
+export const addPerfume = (perfume) => async dispatch => {
+  const response = await csrfFetch ('/api/perfumes', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(perfume)
+  })
+  if (response.ok) {
+    const perfume = await response.json();
+    dispatch(createPerfume(perfume));
+    return perfume;
+  };
+};
+
+
 //Reducer
 const perfumeReducer = (state = {}, action) => {
   switch (action.type) {
@@ -60,6 +85,12 @@ const perfumeReducer = (state = {}, action) => {
       const detailLoaded = {...state};
       detailLoaded[action.perfume.id] = action.perfume;
       return detailLoaded; 
+    }
+    case CREATE: {
+      // const newState = {...state};
+      // newState[action.perfume.id] = action.perfume
+      // return newState;
+      return { ...state, [action.perfume.id]: action.perfume}
     }
 
     default:
