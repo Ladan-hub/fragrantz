@@ -12,11 +12,6 @@ const PerfumeDetail = () => {
   const perfumes = useSelector((state) => state.perfumes);
   const perfume = perfumes[+perfumeId];
 
-  const sanityCheck = () => {
-    console.log(perfumeId);
-    console.log(perfume);
-  }
-  
 
   // Thunk Action Dispatch with UseEffect
   const dispatch = useDispatch();
@@ -31,9 +26,10 @@ const PerfumeDetail = () => {
         <h1>
             {perfume?.name}
         </h1>
-        <button onClick={sanityCheck}>
-            
-        </button>
+        <img src={perfume?.perfumeImg} alt="perfume" />
+        <div className="caption">{perfume?.name}</div>
+        <div className="caption">{perfume?.brand}</div>
+        <div className="caption">Perfumer: {perfume?.masterPerfumer}</div> 
     </div>
   )
 };

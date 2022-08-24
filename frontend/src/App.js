@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Perfume from "./components/Perfumes/index";
 import PerfumeDetail from "./components/PerfumeDetail";
+import PerfumeForm from "./components/PerfumeForm/index";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/perfumes/new">
+            <PerfumeForm />
           </Route>
           <Route exact path="/">
             <Perfume />

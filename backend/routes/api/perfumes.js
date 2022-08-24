@@ -7,6 +7,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 const { requireAuth } = require("../../utils/auth");
 
 
+
 // Don't forget to write validations
 
 
@@ -28,8 +29,12 @@ router.get('/:id', asyncHandler(async (req,res) => {
     
 }));
 
-
-
+// POST uploading a perfume (CREATE)
+router.post("/", requireAuth, asyncHandler(async (req,res) => {
+    const perfume = await db.Perfume.create(req.body)
+    console.log(req.body)
+    return res.json(perfume)
+}));
 
 
 

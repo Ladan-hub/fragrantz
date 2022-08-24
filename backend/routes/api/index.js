@@ -7,9 +7,8 @@ const perfumesRouter = require('./perfumes.js')
 router.use('/session', sessionRouter)
 router.use('/users', userRouter);
 router.use('/perfumes', perfumesRouter);
+// you already have the /perfumes route on line 9
 //router.use('/perfumes/:id', perfumesRouter);
-
-
 
 
 
