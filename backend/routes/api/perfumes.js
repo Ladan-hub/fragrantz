@@ -35,6 +35,21 @@ router.post("/", requireAuth, asyncHandler(async (req,res) => {
     return res.json(perfume)
 }));
 
+// PUT updating a perfume (UPDATE)
+router.put("/:id", requireAuth, asyncHandler(async (req,res) => {
+    const oldPerfume = await db.Perfume.findOne({
+        where: {
+            id: req.body.id
+        }
+    })
+
+    const newPerfume = oldPerfume.update(req.body);
+    return res.json(newPerfume)
+}))
+
+
+
+
 // DELETE deleting a perfume (DELETE)
 router.delete("/delete", requireAuth, asyncHandler(async (req,res) => {
     const deletedPerfume = await db.Perfume.findOne({

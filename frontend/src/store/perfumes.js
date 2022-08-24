@@ -6,6 +6,7 @@ const LOAD_PERFUMES = "perfumes/LOAD";
 const LOAD_DETAIL = "perfume/DETAIL";
 const CREATE = "perfume/CREATE";
 const DELETE = "perfume/DELETE";
+const UPDATE = "perfume/UPDATE"
 
 // ACs:
 
@@ -33,6 +34,14 @@ export const createPerfume = (perfume) => {
   }
 }
 
+// AC for UPDATE (updatePerfume)
+export const updatePerfume = (perfume) => {
+  return {
+    type: UPDATE,
+    perfume
+  }
+}
+
 // AC for DELETE (deletePerfume)
 
 export const deletePerfume = (perfumeId) => {
@@ -41,6 +50,7 @@ export const deletePerfume = (perfumeId) => {
     perfumeId
   }
 }
+
 
 // THUNK ACs:
 
@@ -79,6 +89,20 @@ export const addPerfume = (perfume) => async dispatch => {
   };
 };
 
+// Thunk AC UPDATE 
+export const perfumeUpdate = (perfume) => async dispatch => {
+  const response = await csrfFetch ('/api/perfumes/edit', {
+    method: "PUT",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(perfume)
+  })
+  if (response.ok) {
+    const perfume = await response.json();
+    dispatch(updatePerfume(perfume));
+    return perfume;
+  }
+}
+
 // Thunk AC DELETE (perfumeDelete)
 
 export const perfumeDelete = (perfume) => async dispatch => {
@@ -116,6 +140,10 @@ const perfumeReducer = (state = {}, action) => {
       // newState[action.perfume.id] = action.perfume
       // return newState;
       return { ...state, [action.perfume.id]: action.perfume}
+    }
+    case UPDATE: {
+      const newState = {...state};
+      newState[action.perfume.id] = action.perfume
     }
     case DELETE: {
       const newState = {...state};

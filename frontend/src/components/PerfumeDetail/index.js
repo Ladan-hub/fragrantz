@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { fetchDetail } from "../../store/perfumes";
 import { perfumeDelete } from "../../store/perfumes";
+import { perfumeUpdate } from "../../store/perfumes";
 
 import "./PerfumeDetail.css";
 
@@ -26,12 +27,22 @@ const PerfumeDetail = () => {
     dispatch(fetchDetail(perfumeId));
   }, [dispatch, perfumeId]);
 
+  // delete button event handler 
   const deleteEventHandler = async () => {
     const deletedPerfume = await dispatch(perfumeDelete(perfume))
     if (deletedPerfume) {
       history.push('/')
     }
   }
+
+  // edit button event handler 
+  const editEventHandler = async () => {
+    const editedPerfume = await dispatch(perfumeUpdate(perfume))
+    if (perfume) {
+      history.push('/perfumes/edit')
+    }
+  }
+
 
 
   return (
@@ -46,6 +57,7 @@ const PerfumeDetail = () => {
         <div className="caption">Perfumer: {perfume?.masterPerfumer}</div>
         <section className="delete-edit">
         {perfume?.userId === logedInUser?.id ? <button onClick={deleteEventHandler}>Delete Perfume</button> : null}
+        {perfume?.userId === logedInUser?.id ? <button onClick={editEventHandler}>Edit Perfume</button> : null}
         </section>
     </div>
     </>
