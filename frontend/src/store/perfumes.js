@@ -88,8 +88,8 @@ export const perfumeDelete = (perfume) => async dispatch => {
   })
   if (response.ok) {
     const deletedPerfume = await response.json();
-    dispatch(deletePerfume(deletedPerfume))
-    return deletePerfume;
+    dispatch(deletePerfume(deletedPerfume.id))
+    return deletedPerfume;
   }
 }
 
@@ -116,6 +116,12 @@ const perfumeReducer = (state = {}, action) => {
       // newState[action.perfume.id] = action.perfume
       // return newState;
       return { ...state, [action.perfume.id]: action.perfume}
+    }
+    case DELETE: {
+      const newState = {...state};
+      delete newState[action.perfumeId]
+      return newState;
+
     }
 
     default:
