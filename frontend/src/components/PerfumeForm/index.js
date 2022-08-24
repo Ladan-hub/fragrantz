@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { addPerfume, createPerfume } from '../../store/perfumes';
 import './PerfumeForm.css';
@@ -7,6 +8,7 @@ import { nanoid } from 'nanoid';
 
 
 const PerfumeForm = () => {
+  const history = useHistory();
   // loged in user
   const logedInUser = useSelector(state => state.session.user)
 
@@ -42,10 +44,12 @@ const PerfumeForm = () => {
     setMasterPerfumer('');
     setPerfumeImg('');
 
+    history.push('/');
+
   };
 
-  if (logedInUser) {
-  return (
+
+  return logedInUser && (
     <div>
       <h1>Add a Perfume!</h1>
       <form onSubmit={perfumeSubmitted}>
@@ -82,7 +86,6 @@ const PerfumeForm = () => {
       </form>
     </div>
   );
-}
 };
 
 export default PerfumeForm;
