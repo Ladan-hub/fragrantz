@@ -5,8 +5,9 @@ import { csrfFetch } from "./csrf";
 const LOAD_PERFUMES = "perfumes/LOAD";
 const LOAD_DETAIL = "perfume/DETAIL";
 const CREATE = "perfume/CREATE";
+const DELETE = "perfume/DELETE";
 
-// ACTION CREATORS:
+// ACs:
 
 // AC for loading perfumes
 export const loadPerfumes = (perfumes) => {
@@ -32,10 +33,18 @@ export const createPerfume = (perfume) => {
   }
 }
 
+// AC for DELETE (deletePerfume)
 
-// THUNK ACTION CREATORS:
+export const deletePerfume = (perfumeId) => {
+  return {
+    type: DELETE,
+    perfumeId
+  }
+}
 
-// Thunk AC for fetching perfumes from the backend database
+// THUNK ACs:
+
+// Thunk AC for fetching all perfumes from the backend database
 export const fetchPerfumes = () => async (dispatch) => {
   const response = await csrfFetch("/api/perfumes/");
   if (response.ok) {
@@ -56,7 +65,7 @@ export const fetchDetail = (perfumeId) => async (dispatch) => {
   }
 };
 
-// Thunk AC for sending CREATE data to the db
+// Thunk AC CREATE
 export const addPerfume = (perfume) => async dispatch => {
   const response = await csrfFetch ('/api/perfumes', {
     method: 'POST',
@@ -69,6 +78,22 @@ export const addPerfume = (perfume) => async dispatch => {
     return perfume;
   };
 };
+
+// Thunk AC DELETE (perfumeDelete)
+
+export const perfumeDelete = (perfume) => async dispatch => {
+  const response = await csrfFetch('/api/perfumes/delete', {
+    method: 'DELETE',
+    body: JSON.stringify(perfume)
+  })
+  if (response.ok) {
+    const deletedPerfume = await response.json();
+    dispatch(deletePerfume(deletedPerfume))
+    return deletePerfume;
+  }
+}
+
+
 
 
 //Reducer

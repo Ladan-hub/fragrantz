@@ -30,7 +30,7 @@ const Perfumes = () => {
 
 
     // if the user is logged in:
-    if (logedInUser) {
+    
         return (
             <div>
                 <h1 className="greeting-message">Enjoy Browsing the Perfumes!</h1>
@@ -48,9 +48,6 @@ const Perfumes = () => {
         )
 
     }
-   
-
-}
 
 export default Perfumes; 
 
