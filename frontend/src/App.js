@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
@@ -8,33 +8,43 @@ import Perfume from "./components/Perfumes/index";
 import PerfumeDetail from "./components/PerfumeDetail";
 import PerfumeForm from "./components/CreatePerfumeForm/index";
 import EditForm from "./components/EditPerfumeForm";
+import CommentForm from "./components/CommentForm";
+import Splash from "./components/SplashPage";
 
 function App() {
+  const loggedInUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  //console.log("This is the app")
   return (
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/signup">
-            <SignupFormPage />
+          <Route exact path="/perfumes/:perfumeId/comment">
+            <CommentForm />
+          </Route>
+          <Route exact path="/perfumes/:perfumeId/edit">
+            <EditForm />
+          </Route>
+          <Route exact path="/perfumes/:perfumeId">
+            <PerfumeDetail />
           </Route>
           <Route path="/perfumes/new">
             <PerfumeForm />
           </Route>
-          <Route path="/perfumes/edit">
-            <EditForm /> 
+          <Route exact path="/signup">
+            <SignupFormPage />
           </Route>
           <Route exact path="/">
             <Perfume />
           </Route>
-          <Route path="/perfumes/:perfumeId">
-            <PerfumeDetail />
+          <Route>
+            <h1>Page Not Found</h1>
           </Route>
         </Switch>
       )}

@@ -65,7 +65,6 @@ export const fetchPerfumes = () => async (dispatch) => {
 };
 
 // Thunk AC for fetching one perfume from the backend database
-
 export const fetchDetail = (perfumeId) => async (dispatch) => {
   const response = await csrfFetch(`/api/perfumes/${perfumeId}`);
   if (response.ok) {
@@ -91,13 +90,15 @@ export const addPerfume = (perfume) => async dispatch => {
 
 // Thunk AC UPDATE 
 export const perfumeUpdate = (perfume) => async dispatch => {
-  const response = await csrfFetch ('/api/perfumes/edit', {
+  
+  const response = await csrfFetch (`/api/perfumes/${perfume.id}`, {
     method: "PUT",
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(perfume)
   })
   if (response.ok) {
     const perfume = await response.json();
+    //console.log(perfume)
     dispatch(updatePerfume(perfume));
     return perfume;
   }

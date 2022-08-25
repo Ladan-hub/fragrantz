@@ -7,6 +7,7 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const loggedInUser = useSelector(state => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
@@ -23,12 +24,17 @@ function Navigation({ isLoaded }){
   }
 
   return (
+    <section className='root'>
+    <div className='root-div'>
     <ul>
       <li>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
+        <NavLink to="/perfumes/new">Add Perfume</NavLink>
       </li>
     </ul>
+    </div>
+    </section>
   );
 }
 

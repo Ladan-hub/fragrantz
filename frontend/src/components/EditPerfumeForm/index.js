@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { perfumeUpdate } from '../../store/perfumes';
 
 
 
@@ -13,8 +14,10 @@ const EditForm = () => {
     // logged in user
     const loggedInUser = useSelector(state => state.session.user)
 
+    const {perfumeId} = useParams();
+
     // useStates 
-    const [name, setName] = useState('');
+    const [name, setName] = useState(``);
     const [brand, setBrand] = useState('');
     const [masterPerfumer, setMasterPerfumer] = useState('');
     const [perfumeImg, setPerfumeImg] = useState('');
@@ -24,15 +27,24 @@ const EditForm = () => {
     const editedPerfumeSubmitted = async (e) => {
         e.preventDefault();
         const perfume = {
+            id: perfumeId,
             userId: loggedInUser.id,
             name,
             brand,
             masterPerfumer,
             perfumeImg
         }
+        
 
-         //dispatch(addPerfume(perfume))
-        reset();
+         //dispatch(perfumeUpdate(perfume))
+         const editedPerfume = await dispatch(perfumeUpdate(perfume))
+         if (editedPerfume) {
+          history.push('/')
+         }
+        //  if (perfume) {
+        //   history.push(`/`)
+        // }
+         reset();
       };
     
       const reset = () => {
@@ -40,8 +52,8 @@ const EditForm = () => {
         setBrand('');
         setMasterPerfumer('');
         setPerfumeImg('');
+       // history.push('/')
     
-        history.push('/');
       };
 
 
