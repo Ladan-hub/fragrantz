@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/perfumes/:perfumeId">
             <PerfumeDetail />
           </Route>
-          <Route path="/perfumes/new">
+          <Route path="/new">
             <PerfumeForm />
           </Route>
           <Route exact path="/signup">
