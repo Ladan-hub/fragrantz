@@ -30,7 +30,8 @@ function Navigation({ isLoaded }){
       <li>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
-        <NavLink to="/new">Add Perfume</NavLink>
+        
+        {loggedInUser ? <NavLink to="/new">Add Perfume</NavLink> : null}
       </li>
     </ul>
     </div>
