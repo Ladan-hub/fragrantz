@@ -32,11 +32,11 @@ const Perfumes = () => {
     // if the user is logged in:
     
         return (
-            <div>
+            <div className="root-container">
                 <h1 className="greeting-message">Enjoy Browsing the Perfumes!</h1>
                 <section className="all-perfumes">
                     {perfumes.map((perfume) => (
-                        <span className="container">
+                        <span className="container" key={perfume.id}>
                         <img onClick={() => history.push(`/perfumes/${perfume.id}`)}
                         className="perfume-image" key={perfume.id} src={perfume.perfumeImg} alt="This is the perfume"
                         /> 

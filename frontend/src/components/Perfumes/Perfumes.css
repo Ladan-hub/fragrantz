@@ -1,11 +1,20 @@
-/* .greeting-message {
-    size: 20px;
-
+/* .root-container {
+    background-color: 	#005073;
 } */
+
+.greeting-message {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    padding: 20px;
+    margin: auto;
+
+
+}
 
 .container {
     width: 20%;
     height: 20%;
+    background-color: #EEF4EA;
 }
 
 .perfume-image {

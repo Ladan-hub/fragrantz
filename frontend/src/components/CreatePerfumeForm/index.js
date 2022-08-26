@@ -4,13 +4,12 @@ import { useHistory } from 'react-router-dom';
 
 import { addPerfume, createPerfume } from '../../store/perfumes';
 import './PerfumeForm.css';
-import { nanoid } from 'nanoid';
 
 
 const PerfumeForm = () => {
   const history = useHistory();
   // loged in user
-  const logedInUser = useSelector(state => state.session.user)
+  const loggedInUser = useSelector(state => state.session.user)
 
  // useStates
   const [name, setName] = useState('');
@@ -25,15 +24,13 @@ const PerfumeForm = () => {
   const perfumeSubmitted = async (e) => {
     e.preventDefault();
     const perfume = {
-        userId: logedInUser.id,
+        userId: loggedInUser.id,
         name,
         brand,
         masterPerfumer,
         perfumeImg
     }
-    //console.log(userId);
-
-    //console.log(perfume);
+  
      dispatch(addPerfume(perfume))
     reset();
   };
@@ -49,7 +46,7 @@ const PerfumeForm = () => {
   };
 
 
-  return logedInUser && (
+  return loggedInUser && (
     <div>
       <h1>Add a Perfume!</h1>
       <form onSubmit={perfumeSubmitted}>
