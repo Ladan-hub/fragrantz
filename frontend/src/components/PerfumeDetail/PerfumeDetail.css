@@ -1,0 +1,74 @@
+.perfume-name {
+    font-family:'Courier New', Courier, monospace;
+    font-weight:lighter;
+    text-align: center;
+    margin:  30px auto;
+    display: block;
+}
+
+.perfume-img {
+    margin: auto;
+    display: block;
+    height: 35%;
+    width: 35%;
+}
+
+.caption {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+
+.write-comment-button {
+    background-color: #EDE1DA;
+   font-family: 'Courier New', Courier, monospace;
+   padding: 15px 20px;
+   font-weight: bold;
+   text-align: center;
+   color: black;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.20em;
+   border: none;
+   margin: auto;
+   margin-top: 10px;
+   display: block;
+}
+
+.delete-perfume {
+    background-color: #EDE1DA;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px 20px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.20em;
+    border: none;
+    margin: auto;
+    display: block;
+}
+
+.edit-perfume {
+    background-color: #EDE1DA;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px 20px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.20em;
+    border: none;
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+
+
+}
+
+
+
+
+

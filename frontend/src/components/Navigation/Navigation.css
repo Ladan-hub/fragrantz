@@ -1,4 +1,40 @@
 .root {
-   background-color: #189AD3;
+   background-color: #EDE1DA;
    padding: 10px;
 }
+
+
+.Navlink {
+   background-color: white;
+   font-family: 'Courier New', Courier, monospace;
+   padding: 15px 20px;
+   font-weight: bold;
+   text-align: center;
+   text-decoration: none;
+   color: black;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.20em;
+   display: inline-block;
+}
+
+.sign-up-button {
+   background-color: white;
+   font-family: 'Courier New', Courier, monospace;
+   padding: 15px 20px;
+   font-weight: bold;
+   text-align: center;
+   text-decoration: none;
+   color: black;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.20em;
+   display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+

@@ -1,0 +1,30 @@
+.comment-label {
+    font-family: 'Courier New', Courier, monospace;;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.one-comment {
+    font-family:'Courier New', Courier, monospace;
+    font-weight:300;
+    font-size: medium;
+    text-align: center;
+}
+
+.delete-comment-button {
+   background-color: #EDE1DA;
+   font-family: 'Courier New', Courier, monospace;
+   padding: 7px 15px;
+   font-weight: bold;
+   text-align: center;
+   color: black;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.20em;
+   border: none;
+   margin: 10px auto;
+   display: block;
+}
+
+

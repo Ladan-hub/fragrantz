@@ -72,17 +72,17 @@ const PerfumeForm = () => {
 
   return (
     loggedInUser && (
-      <div>
-        <h1>Add a Perfume!</h1>
-        <ul className="error-messages">
+      <div className="perfume-form-container">
+        <h1 className="add-perfume">Add a Perfume!</h1>
+        <ul className="add-perfume-form-errors">
           {validationErrors.map((validationError) => (
             <li key={validationError}>{validationError}</li>
           ))}
         </ul>
-        <form onSubmit={perfumeSubmitted}>
-          <label>
+        <form className="add-perfume-form" onSubmit={perfumeSubmitted}>
+          <label className="add-perfume-form-label">
             Enter Name
-            <input
+            <input className="add-perfume-field"
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
@@ -90,9 +90,9 @@ const PerfumeForm = () => {
               name="name"
             />
           </label>
-          <label>
+          <label className="add-perfume-form-label" >
             Enter Brand
-            <input
+            <input className="add-perfume-field"
               type="text"
               onChange={(e) => setBrand(e.target.value)}
               value={brand}
@@ -100,9 +100,9 @@ const PerfumeForm = () => {
               name="brand"
             />
           </label>
-          <label>
+          <label className="add-perfume-form-label">
             Enter Perfumer
-            <input
+            <input className="add-perfume-field"
               type="text"
               onChange={(e) => setMasterPerfumer(e.target.value)}
               value={masterPerfumer}
@@ -110,9 +110,9 @@ const PerfumeForm = () => {
               name="masterPerfumer"
             />
           </label>
-          <label>
+          <label className="add-perfume-form-label">
             Enter Image URL
-            <input
+            <input className="add-perfume-field"
               type="text"
               onChange={(e) => setPerfumeImg(e.target.value)}
               value={perfumeImg}
@@ -120,7 +120,7 @@ const PerfumeForm = () => {
               name="perfumeImg"
             />
           </label>
-          <button type="submit">Add Your New Perfume!</button>
+          <button className="add-perfume-button" type="submit">Add Your New Perfume!</button>
         </form>
       </div>
     )

@@ -15,7 +15,7 @@ const Comment = () => {
     const perfume = perfumes[perfumeId];
     const allPerfumeComments = useSelector(state =>state.comments)
     const commentsArr = Object.values(allPerfumeComments)
-    //console.log(comments)
+    console.log(commentsArr)
     const logedInUser = useSelector(state => state.session.user);
     //let allPerfumeComments = comments.filter(comment=> comment.perfumeId === Number(perfumeId))
     console.log("All perfume comments", commentsArr)
@@ -36,10 +36,10 @@ const Comment = () => {
 
   return (
     <div>
-      <h2>Comments</h2>
+      <h2 className="comment-label">Comments</h2>
       {commentsArr.map((comment) => (
         <div className="one-comment">{comment.comment}
-        {comment?.userId === logedInUser?.id ? <button onClick={() => deleteComment(comment.id)}>Delete Comment</button> : null}
+        {comment?.userId === logedInUser?.id ? <button className="delete-comment-button" onClick={() => deleteComment(comment.id)}>Delete Comment</button> : null}
         </div>
       ))}
     </div>

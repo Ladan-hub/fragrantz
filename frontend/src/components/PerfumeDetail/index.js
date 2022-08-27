@@ -68,17 +68,17 @@ const PerfumeDetail = () => {
   return (
     <>
     <div>
-        <h1>
+        <h1 className="perfume-name">
             {perfume?.name}
         </h1>
-        <img src={perfume?.perfumeImg} alt="perfume" />
-        <div className="caption">{perfume?.name}</div>
-        <div className="caption">{perfume?.brand}</div>
-        <div className="caption">Perfumer: {perfume?.masterPerfumer}</div>
+        <img className="perfume-img" src={perfume?.perfumeImg} alt="perfume" />
+        <h2 className="caption">{perfume?.name}</h2>
+        <h2 className="caption">{perfume?.brand}</h2>
+        <h2 className="caption">Perfumer: {perfume?.masterPerfumer}</h2>
         <section className="delete-edit">
-        {perfume?.userId === logedInUser?.id ? <button onClick={deleteEventHandler}>Delete Perfume</button> : null}
-        {perfume?.userId === logedInUser?.id ? <button onClick={editEventHandler}>Edit Perfume</button> : null}
-        {logedInUser? <button onClick={commentEventHandler}>Write Comment</button> : null}
+        {perfume?.userId === logedInUser?.id ? <button className="delete-perfume" onClick={deleteEventHandler}>Delete Perfume</button> : null}
+        {perfume?.userId === logedInUser?.id ? <button className="edit-perfume" onClick={editEventHandler}>Edit Perfume</button> : null}
+        {logedInUser? <button className="write-comment-button" onClick={commentEventHandler}>Write Comment</button> : null}
         </section>
         <section className="all-comments">
           <Comment />

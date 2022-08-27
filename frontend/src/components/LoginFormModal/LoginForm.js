@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import "./LoginForm.css"
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit">Log In</button>
-      <button className="demo" onClick={() => demo()}>
+      <button onClick={() => demo()}>
         Demo
       </button>
     </form>

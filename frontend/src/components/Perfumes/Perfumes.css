@@ -3,27 +3,29 @@
 } */
 
 .greeting-message {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     font-size: 40px;
-    padding: 20px;
-    margin: auto;
-
-
+    font-weight: lighter;
+    padding: 10px; 
+    margin: 20px
 }
 
 .container {
     width: 20%;
     height: 20%;
     background-color: #EEF4EA;
+    padding: 5px;
 }
 
 .perfume-image {
     width: 30%;
     height: 30%;
-    margin: 0.3%;
 }
 
 .all-perfumes {
-    margin: 5%;
+    margin: 3%;
+
 }
+
+
 

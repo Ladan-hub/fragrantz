@@ -89,15 +89,15 @@ const EditForm = () => {
     return loggedInUser && (
         <div>
       <h1>Edit your Perfume!</h1>
-      <ul className="error-messages">
+      <ul className="errors">
           {validationErrors.map((validationError) => (
             <li key={validationError}>{validationError}</li>
           ))}
         </ul>
-      <form onSubmit={editedPerfumeSubmitted}>
-        <label>
+      <form  className = "edit-perfume-form" onSubmit={editedPerfumeSubmitted}>
+        <label className='edit-form-label'>
           Edit Name
-        <input
+        <input className='edit-field'
           type='text'
           onChange={(e) => setName(e.target.value)}
           value={name}
@@ -105,9 +105,9 @@ const EditForm = () => {
           name='name'
         />
         </label>
-        <label>
+        <label className='edit-form-label'>
           Edit Brand
-        <input
+        <input className='edit-field'
           type='text'
           onChange={(e) => setBrand(e.target.value)}
           value={brand}
@@ -115,9 +115,9 @@ const EditForm = () => {
           name='brand'
         />
         </label>
-        <label>
+        <label className='edit-form-label'>
           Edit Perfumer
-         <input
+         <input className='edit-field'
           type='text'
           onChange={(e) => setMasterPerfumer(e.target.value)}
           value={masterPerfumer}
@@ -125,9 +125,9 @@ const EditForm = () => {
           name='masterPerfumer'
         />
         </label>
-        <label>
+        <label className='edit-form-label'>
           Edit Perfume Image URL
-        <input
+        <input className='edit-field'
           type='text'
           onChange={(e) => setPerfumeImg(e.target.value)}
           value={perfumeImg}
@@ -136,7 +136,7 @@ const EditForm = () => {
         />
         </label>
        
-        <button type='submit'>Submit your Perfume!</button>
+        <button className='submit-perfume-button' type='submit'>Submit your Perfume!</button>
       </form>
     </div>
 
