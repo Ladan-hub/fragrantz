@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { perfumeUpdate } from '../../store/perfumes';
@@ -21,6 +21,35 @@ const EditForm = () => {
     const [brand, setBrand] = useState('');
     const [masterPerfumer, setMasterPerfumer] = useState('');
     const [perfumeImg, setPerfumeImg] = useState('');
+    const [validationErrors, setValidationErrors] = useState([]);
+
+    // Validation Errors
+    useEffect(() => {
+      const errors = [];
+      if (name.length < 2) {
+        errors.push("Name must be at least 2 characters");
+      }
+      if (name.length > 250) {
+        errors.push("Name must be less than 250 characters");
+      }
+      if (brand.length < 2) {
+        errors.push("Brand must be at least 2 characters ");
+      }
+      if (brand.length > 250) {
+        errors.push("Brand must be less than 250 characters");
+      }
+      if (masterPerfumer.length > 250) {
+        errors.push("Perfumer must be less than 250 characters");
+      }
+      if (perfumeImg.length < 10) {
+        errors.push("Perfume image URL must be at least 10 characters")
+      }
+      if (perfumeImg.length > 500) {
+        errors.push("Perfume image URL must be less than 500 characters");
+      }
+      setValidationErrors(errors);
+    }, [name, brand, masterPerfumer, perfumeImg]);
+    
 
     const dispatch = useDispatch();
 
@@ -60,7 +89,14 @@ const EditForm = () => {
     return loggedInUser && (
         <div>
       <h1>Edit your Perfume!</h1>
+      <ul className="error-messages">
+          {validationErrors.map((validationError) => (
+            <li key={validationError}>{validationError}</li>
+          ))}
+        </ul>
       <form onSubmit={editedPerfumeSubmitted}>
+        <label>
+          Edit Name
         <input
           type='text'
           onChange={(e) => setName(e.target.value)}
@@ -68,6 +104,9 @@ const EditForm = () => {
           placeholder= "Blue de Chanel"
           name='name'
         />
+        </label>
+        <label>
+          Edit Brand
         <input
           type='text'
           onChange={(e) => setBrand(e.target.value)}
@@ -75,6 +114,9 @@ const EditForm = () => {
           placeholder="Chanel"
           name='brand'
         />
+        </label>
+        <label>
+          Edit Perfumer
          <input
           type='text'
           onChange={(e) => setMasterPerfumer(e.target.value)}
@@ -82,6 +124,9 @@ const EditForm = () => {
           placeholder="Jacques Polge"
           name='masterPerfumer'
         />
+        </label>
+        <label>
+          Edit Perfume Image URL
         <input
           type='text'
           onChange={(e) => setPerfumeImg(e.target.value)}
@@ -89,6 +134,7 @@ const EditForm = () => {
           placeholder="https://www.theperfumeshop.com/-Boss-Bottled.jpg"
           name='perfumeImg'
         />
+        </label>
        
         <button type='submit'>Submit your Perfume!</button>
       </form>
