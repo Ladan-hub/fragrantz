@@ -23,6 +23,7 @@ function LoginForm() {
 
   const history = useHistory();
   const demo = () => {
+   
     return dispatch(
       sessionActions.login({ credential: "FakeUser2", password: "password3" })
     )
@@ -40,6 +41,7 @@ function LoginForm() {
           <li key={idx}>{error}</li>
         ))}
       </ul>
+      <div className="input-field-container">
       <label>
         Username or Email
         <input
@@ -58,10 +60,15 @@ function LoginForm() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
-      <button onClick={() => demo()}>
+      </div>
+      <div className="login-container">
+      <button className="login-form-button" type="submit">Log In</button>
+      </div>
+      <div className="demo-container">
+      <button className="demo-button" onClick={() => demo()}>
         Demo
       </button>
+      </div>
     </form>
   );
 }

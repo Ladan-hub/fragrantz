@@ -1,0 +1,42 @@
+/* .signup-form-container {
+    margin: auto;
+    align-items: center;
+} */
+
+.signup-form {
+    margin: auto;
+    display: block;
+}
+
+.signup-form-label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+.signup-field {
+  background-color: white;
+  height: 20px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border: 2px solid #EDE1DA;
+  border-radius: 2px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}
+
+.signup-button {
+    background-color: #EDE1DA;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px 20px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.20em;
+    border: none;
+    margin: auto;
+    display: block;
+}
+

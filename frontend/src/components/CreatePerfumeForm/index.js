@@ -74,11 +74,13 @@ const PerfumeForm = () => {
     loggedInUser && (
       <div className="perfume-form-container">
         <h1 className="add-perfume">Add a Perfume!</h1>
+        <div className="error-message-container">
         <ul className="add-perfume-form-errors">
           {validationErrors.map((validationError) => (
             <li key={validationError}>{validationError}</li>
           ))}
         </ul>
+        </div>
         <form className="add-perfume-form" onSubmit={perfumeSubmitted}>
           <label className="add-perfume-form-label">
             Enter Name

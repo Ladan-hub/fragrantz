@@ -87,13 +87,16 @@ const EditForm = () => {
 
 
     return loggedInUser && (
-        <div>
-      <h1>Edit your Perfume!</h1>
+        <div className='edit-form-container'>
+      <h1 className='message'>Edit your Perfume!</h1>
+      <div className='error-container'>
       <ul className="errors">
           {validationErrors.map((validationError) => (
             <li key={validationError}>{validationError}</li>
           ))}
         </ul>
+        </div>
+        
       <form  className = "edit-perfume-form" onSubmit={editedPerfumeSubmitted}>
         <label className='edit-form-label'>
           Edit Name

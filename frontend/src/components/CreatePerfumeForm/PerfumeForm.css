@@ -8,8 +8,6 @@
 
 .add-perfume-form-errors {
     color: red;
-    margin: auto;
-    display: block;
 }
 
 .add-perfume-form {
@@ -20,6 +18,7 @@
 .add-perfume-form-label {
     font-family: 'Courier New', Courier, monospace;
     font-size: 17px;
+    margin-left: 20px;
 }
 
 .add-perfume-field {
@@ -46,6 +45,13 @@
     border: none;
     margin: auto;
     display: block;
+}
+
+.error-message-container {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+
 }
 
 

@@ -1,0 +1,47 @@
+.profile-button {
+    background-color: white;
+   padding: 15px 20px;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.20em;
+   display: inline-block;
+   border: none;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.profile-dropdown-container {
+    background-color: white;
+    border: 2px solid #EDE1DA;
+    border-radius: 2px;
+    position: absolute;
+    top: 100px;
+    left: 143px;
+}
+
+.logout-button {
+    background-color: #EDE1DA;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    border-radius: 0.20em;
+    border: none;
+    display: block;
+}
+
+.user-name {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+}
+
+.user-email {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+}
+
+
