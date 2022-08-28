@@ -4,7 +4,9 @@
 }
 
 
-.Navlink {
+
+
+/* .NavLink{
    background-color: white;
    font-family: 'Courier New', Courier, monospace;
    padding: 15px 20px;
@@ -17,6 +19,41 @@
    cursor: pointer;
    border-radius: 0.20em;
    display: inline-block;
+
+} */
+
+.logo-img{
+   height: 80px;
+   width: 100px;
+}
+
+.NavLink {
+  
+   padding: 15px 20px;
+   text-decoration: none;
+   color: black;
+   cursor: pointer;
+   border-radius: 0.20em;
+   /* display: flex;
+   justify-content: space-evenly;
+   margin-left: 85px; */
+}
+
+.NavLink-add-perfume {
+   background-color: white;
+   font-family: 'Courier New', Courier, monospace;
+   padding: 15px 20px;
+   font-weight: bold;
+   font-size: 14px;
+   text-align: center;
+   text-decoration: none;
+   color: black;
+   cursor: pointer;
+   border-radius: 0.20em;
+   /* display: inline-block; */
+   display: flex;
+   flex-direction: column;
+
 }
 
 .sign-up-button {
@@ -28,7 +65,6 @@
    text-align: center;
    text-decoration: none;
    color: black;
-   text-align: center;
    cursor: pointer;
    border-radius: 0.20em;
    display: inline-block;
@@ -37,6 +73,12 @@
 ul {
   list-style-type: none;
 }
+
+.buttons-container {
+   display: flex;
+   align-items: center;
+}
+
 
 
 
