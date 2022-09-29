@@ -27,7 +27,7 @@ export const loadDetail = (perfume) => {
 };
 
 // AC for CREATE 
-export const createPerfume = (perfume) => {
+export const createPerfumeAction = (perfume) => {
   return {
       type: CREATE,
       perfume
@@ -75,16 +75,16 @@ export const fetchDetail = (perfumeId) => async (dispatch) => {
 };
 
 // Thunk AC CREATE
-export const addPerfume = (perfume) => async dispatch => {
+export const addPerfumeThunk = (perfumeToCreate) => async dispatch => {
   const response = await csrfFetch ('/api/perfumes', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(perfume)
+    body: JSON.stringify(perfumeToCreate)
   })
   if (response.ok) {
-    const perfume = await response.json();
-    dispatch(createPerfume(perfume));
-    return perfume;
+    const newlyCreatedPerfume = await response.json();
+    dispatch(createPerfumeAction(newlyCreatedPerfume));
+    return newlyCreatedPerfume;
   };
 };
 

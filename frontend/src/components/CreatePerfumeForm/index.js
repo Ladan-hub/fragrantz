@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { addPerfume, createPerfume } from "../../store/perfumes";
+import { addPerfumeThunk, createPerfume } from "../../store/perfumes";
 import "./PerfumeForm.css";
 
 const PerfumeForm = () => {
@@ -49,7 +49,7 @@ const PerfumeForm = () => {
 
   const perfumeSubmitted = async (e) => {
     e.preventDefault();
-    const perfume = {
+    const perfumeToCreate = {
       userId: loggedInUser.id,
       name,
       brand,
@@ -57,7 +57,7 @@ const PerfumeForm = () => {
       perfumeImg,
     };
 
-    dispatch(addPerfume(perfume));
+    dispatch(addPerfumeThunk(perfumeToCreate));
     reset();
   };
 
