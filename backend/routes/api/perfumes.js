@@ -55,8 +55,9 @@ router.get('/:id', asyncHandler(async (req,res) => {
 
 // POST uploading a perfume (CREATE)
 router.post("/", perfumeValidations, requireAuth, asyncHandler(async (req,res) => {
-    const perfume = await db.Perfume.create(req.body)
-    return res.json(perfume)
+    const perfumeToCreate = req.body
+    const newlyCreatedPerfume = await db.Perfume.create(perfumeToCreate)
+    return res.json(newlyCreatedPerfume)
 }));
 
 // PUT updating a perfume (UPDATE)

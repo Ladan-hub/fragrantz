@@ -35,7 +35,7 @@ export const commentsRead = (perfumeId) => async dispatch => {
     const response = await csrfFetch(`/api/comments/${perfumeId}`)
     if (response.ok) {
         const comments = await response.json();
-console.log(comments)
+// console.log(comments)
         dispatch(readComments(comments));
         return comments;
     }

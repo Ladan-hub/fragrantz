@@ -15,10 +15,10 @@ const Comment = () => {
     const perfume = perfumes[perfumeId];
     const allPerfumeComments = useSelector(state =>state.comments)
     const commentsArr = Object.values(allPerfumeComments)
-    console.log(commentsArr)
+    // console.log(commentsArr)
     const logedInUser = useSelector(state => state.session.user);
     //let allPerfumeComments = comments.filter(comment=> comment.perfumeId === Number(perfumeId))
-    console.log("All perfume comments", commentsArr)
+    // console.log("All perfume comments", commentsArr)
     // TO-DO: make sure targetComment is as specific as possible which comment as which user
 
     const history = useHistory()

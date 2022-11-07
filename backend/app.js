@@ -69,8 +69,8 @@ app.use((err, _req, _res, next) => {
 // Error formatter
 app.use((err, _req, res, _next) => {
   res.status(err.status || 500);
-  console.log("SCREAMING: ------ THIS IS THE ERROR ON BACKEND -----", err.message)
-  console.error(err);
+  // console.log("SCREAMING: ------ THIS IS THE ERROR ON BACKEND -----", err.message)
+  // console.error(err);
   res.json({
     title: err.title || 'Server Error',
     message: err.message,

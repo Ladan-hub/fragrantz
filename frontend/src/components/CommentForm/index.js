@@ -35,11 +35,9 @@ const CommentForm = () => {
         // dispatch the comment 
         dispatch(addComment(userComment))
         reset();
-
     }
 
     const reset = () => {
-        setComment('');
         history.push(`/perfumes/${perfumeId}`)
     }
 
