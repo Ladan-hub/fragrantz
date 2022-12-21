@@ -8,7 +8,7 @@ import Perfume from "./components/Perfumes/index";
 import PerfumeDetail from "./components/PerfumeDetail";
 import PerfumeForm from "./components/CreatePerfumeForm/index";
 import EditForm from "./components/EditPerfumeForm";
-import CommentForm from "./components/CommentForm";
+import CommentForm from "./components/CommentFormModal";
 import Splash from "./components/SplashPage";
 
 function App() {

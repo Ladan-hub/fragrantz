@@ -24,7 +24,7 @@ const CommentForm = () => {
 
     // comment form submition event handler function 
     const commentSubmitted = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const userComment = {
             userId: loggedInUser.id,
@@ -54,7 +54,6 @@ const CommentForm = () => {
 
     return loggedInUser && (
         <div className="comment-div">
-            <h1 className="write-comment">Write your Comment!</h1>
             <ul className="error-messages">
                 {validationErrors.map((validationError) => (
                     <li key={validationError}>{validationError}</li>

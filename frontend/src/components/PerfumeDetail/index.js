@@ -7,6 +7,7 @@ import { fetchDetail } from "../../store/perfumes";
 import { perfumeDelete } from "../../store/perfumes";
 import { perfumeUpdate } from "../../store/perfumes";
 import Comment from "../Comment";
+import CommentFormModal from "../CommentFormModal/CommentFormModal";
 
 import "./PerfumeDetail.css";
 
@@ -78,7 +79,8 @@ const PerfumeDetail = () => {
         <section className="delete-edit">
         {perfume?.userId === logedInUser?.id ? <button className="delete-perfume" onClick={deleteEventHandler}>Delete Perfume</button> : null}
         {perfume?.userId === logedInUser?.id ? <button className="edit-perfume" onClick={editEventHandler}>Edit Perfume</button> : null}
-        {logedInUser? <button className="write-comment-button" onClick={commentEventHandler}>Write Comment</button> : null}
+        {/* {logedInUser? <button className="write-comment-button" onClick={commentEventHandler}>Write Comment</button> : null} */}
+        {logedInUser? <CommentFormModal /> : null}
         </section>
         <section className="all-comments">
           <Comment />

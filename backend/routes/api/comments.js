@@ -6,7 +6,7 @@ const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 const { requireAuth } = require("../../utils/auth");
 
-// Don't forget to write validations
+// Backend Validations 
 
 const commentValidations = [
     check('comment')

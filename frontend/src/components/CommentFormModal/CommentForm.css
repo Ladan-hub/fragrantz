@@ -45,3 +45,19 @@
    margin: auto;
    display: block;
 }
+
+.comment-button{
+    background-color: #EDE1DA;
+   font-family: 'Courier New', Courier, monospace;
+   padding: 15px 20px;
+   font-weight: bold;
+   text-align: center;
+   color: black;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.20em;
+   border: none;
+   margin: auto;
+   display: block;
+    
+}
