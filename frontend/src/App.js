@@ -8,8 +8,9 @@ import Perfume from "./components/Perfumes/index";
 import PerfumeDetail from "./components/PerfumeDetail";
 import PerfumeForm from "./components/CreatePerfumeForm/index";
 import EditForm from "./components/EditPerfumeForm";
-import CommentForm from "./components/CommentFormModal";
+import CommentForm from "./components/CreateCommentForm";
 import Splash from "./components/SplashPage";
+import EditCommentForm from "./components/EditCommentForm";
 
 function App() {
   const loggedInUser = useSelector((state) => state.session.user);
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route exact path="/perfumes/:perfumeId/comment">
             <CommentForm />
+          </Route>
+          <Route exact path="/perfumes/:perfumeId/comments/:commentId/edit">
+            <EditCommentForm />
           </Route>
           <Route exact path="/perfumes/:perfumeId/edit">
             <EditForm />

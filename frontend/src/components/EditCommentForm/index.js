@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router-dom"
 import { addComment } from "../../store/comments"
-import "./CommentForm.css"
+import { updateCommentThunk } from "../../store/comments"
+import "./EditCommentForm.css"
 
 
-const CommentForm = () => {
+const EditCommentForm = () => {
     // dispatch variable
     const dispatch = useDispatch();
 
@@ -15,25 +16,37 @@ const CommentForm = () => {
     // logged in user
     const loggedInUser = useSelector(state => state.session.user)
 
+
+
     // grabbing the perfumeId from the URL 
     const {perfumeId} = useParams()
 
+    // grabbing the commendId from the URL
+    const {commentId} = useParams();
+
+     // grabbing the comment from state
+     const commentsObj = useSelector(state => state.comments);
+     const oldComment = commentsObj[commentId]
+    //  console.log("THIS IS THE OLD COMMENT", oldComment)
+    
+
     // useStates
-    const [comment, setComment] = useState('');
+    const [comment, setComment] = useState(`${oldComment.comment}`);
     const [validationErrors, setValidationErrors] = useState([])
 
     // comment form submition event handler function 
-    const commentSubmitted = (e) => {
+    const editCommentSubmitted = (e) => {
         // e.preventDefault();
 
-        const userComment = {
+        const updatedComment = {
+            id: commentId,
             userId: loggedInUser.id,
             perfumeId: perfumeId,
             comment
         }
 
         // dispatch the comment 
-        dispatch(addComment(userComment))
+        dispatch(updateCommentThunk(updatedComment, commentId))
         reset();
     }
 
@@ -41,7 +54,7 @@ const CommentForm = () => {
         history.push(`/perfumes/${perfumeId}`)
     }
 
-    // Form Validations 
+    //Form Validations 
     useEffect(() => {
         const errors = [];
         if (comment.length < 3) {
@@ -59,7 +72,7 @@ const CommentForm = () => {
                     <li key={validationError}>{validationError}</li>
                 ))}
             </ul>
-            <form className="comment-form" onSubmit={commentSubmitted}>
+            <form className="comment-form" onSubmit={editCommentSubmitted}>
                 <textarea className="comment-field" value={comment} name="comment" onChange={(e) => setComment(e.target.value)}>
                 </textarea>
                 <button className="comment-submit-button" type="submit">Submit!</button>
@@ -70,4 +83,4 @@ const CommentForm = () => {
     )
 }
 
-export default CommentForm;
+export default EditCommentForm;

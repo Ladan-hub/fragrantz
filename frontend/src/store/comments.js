@@ -3,10 +3,21 @@ import perfumeReducer from "./perfumes";
 
 
 // Action Type Variables
-const READ = "comments/READ";
 const CREATE = "comments/CREATE";
+const READ = "comments/READ";
+const UPDATE = "comments/UPDATE";
 const DELETE = "comments/DELETE";
 
+
+// -- AC -- 
+
+// AC => CREATE
+export const createComment = (comment) => {
+    return {
+        type: CREATE,
+        comment
+    }
+}
 
 // AC => READ
 export const readComments = (comments) => {
@@ -15,13 +26,15 @@ export const readComments = (comments) => {
         comments
     }
 }
-// AC => CREATE
-export const createComment = (comment) => {
+
+// AC => UPDATE
+export const updateCommentAction = (comment) => {
     return {
-        type: CREATE,
+        type: UPDATE,
         comment
     }
 }
+
 // AC => DELETE
 export const deleteComment = (comment) => {
     return {
@@ -30,18 +43,11 @@ export const deleteComment = (comment) => {
     }
 }
 
-// THUNK AC => READ 
-export const commentsRead = (perfumeId) => async dispatch => {
-    const response = await csrfFetch(`/api/comments/${perfumeId}`)
-    if (response.ok) {
-        const comments = await response.json();
-// console.log(comments)
-        dispatch(readComments(comments));
-        return comments;
-    }
-};
 
-// THUNK AC => CREATE 
+
+// -- THUNK -- 
+
+// THUNK => CREATE 
 
 export const addComment = (comment) => async dispatch => {
     const response = await csrfFetch (`/api/comments/${comment.perfumeId}`, {
@@ -56,7 +62,33 @@ export const addComment = (comment) => async dispatch => {
     }
 }
 
-// THUNK AC => DELETE
+// THUNK => READ 
+export const commentsRead = (perfumeId) => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${perfumeId}`)
+    if (response.ok) {
+        const comments = await response.json();
+// console.log(comments)
+        dispatch(readComments(comments));
+        return comments;
+    }
+};
+
+// THUNK => UPDATE
+
+export const updateCommentThunk = (updatedComment, commentId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/comments/${commentId}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(updatedComment)
+    })
+    if (response.ok) {
+        const comment = await response.json();
+        dispatch(updateCommentAction(comment));
+        return comment
+    }
+}
+
+// THUNK  => DELETE
 export const commentDelete = (id) => async dispatch => {
     const response = await csrfFetch(`/api/comments/delete`, {
         method: 'DELETE',
@@ -69,7 +101,7 @@ export const commentDelete = (id) => async dispatch => {
     }
 }
 
-// REDUCER 
+// -- REDUCER --
 
 const commentReducer = (state = {}, action) => {
     switch(action.type) {
@@ -83,6 +115,13 @@ const commentReducer = (state = {}, action) => {
         case CREATE: {
             return {...state, [action.comment.id]: action.comment}
         }
+
+        case UPDATE: {
+            const newState = {...state};
+            newState[action.comment.id] = action.comment;
+            return newState;
+        }
+
         case DELETE: {
             const newState = {...state};
             delete newState[action.comment.id];

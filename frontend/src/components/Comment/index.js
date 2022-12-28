@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { commentDelete } from "../../store/comments";
 import { useHistory } from "react-router-dom";
 import './Comment.css'
+import EditCommentForm from "../EditCommentForm";
 
 
 const Comment = () => {
@@ -33,6 +34,10 @@ const Comment = () => {
       }
     }
 
+    const editComment = async (commentId) => {
+      history.push(`/perfumes/${perfumeId}/comments/${commentId}/edit`)
+    }
+
 
   return (
     <div>
@@ -40,6 +45,9 @@ const Comment = () => {
       {commentsArr.map((comment) => (
         <div className="one-comment">{comment.comment}
         {comment?.userId === logedInUser?.id ? <button className="delete-comment-button" onClick={() => deleteComment(comment.id)}>Delete Comment</button> : null}
+        
+        {comment?.userId === logedInUser?.id ? <button className="delete-comment-button" onClick={() => editComment(comment.id)}>Edit Comment</button> : null} 
+        
         </div>
       ))}
     </div>

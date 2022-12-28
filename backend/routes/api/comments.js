@@ -35,6 +35,17 @@ router.get('/:id', requireAuth, asyncHandler(async (req,res) => {
     return res.json(comments)
 }));
 
+// PUT updating a comment (UPDATE)
+router.put('/:id', requireAuth, commentValidations, asyncHandler(async (req,res) => {
+    const oldComment = await db.Comment.findOne({
+        where: {
+            id: req.body.id
+        }
+    })
+    const newComment = await oldComment.update(req.body)
+    return res.json(newComment)
+}))
+
 // DELETE one comment (DELETE)
 router.delete('/delete', requireAuth, asyncHandler(async (req,res) => {
     const deletedComment = await db.Comment.findOne({
