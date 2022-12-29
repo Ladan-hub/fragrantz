@@ -21,26 +21,38 @@ const PerfumeForm = () => {
   // Validation Errors
   useEffect(() => {
     const errors = [];
-    if (name.length < 2) {
+    if (name === "" && brand === "" && masterPerfumer === "" && perfumeImg === "") {
+      errors.push("")
+    }
+    else if (name.length < 2) {
       errors.push("Name must be at least 2 characters");
     }
-    if (name.length > 250) {
+    else if (name.length > 250) {
       errors.push("Name must be less than 250 characters");
     }
-    if (brand.length < 2) {
+    else if (brand.length < 2) {
       errors.push("Brand must be at least 2 characters ");
     }
-    if (brand.length > 250) {
+    else if (brand.length > 250) {
       errors.push("Brand must be less than 250 characters");
     }
-    if (masterPerfumer.length > 250) {
+    else if (masterPerfumer.length < 2) {
+      errors.push("Perfumer must be at least 2 characters");
+    }
+    else if (masterPerfumer.length > 250) {
       errors.push("Perfumer must be less than 250 characters");
     }
-    if (perfumeImg.length < 10) {
+    else if (perfumeImg.length < 10) {
       errors.push("Perfume image URL must be at least 10 characters")
     }
-    if (perfumeImg.length > 500) {
+    else if (perfumeImg.length > 500) {
       errors.push("Perfume image URL must be less than 500 characters");
+    }
+    else if ((!perfumeImg.endsWith(".jpg")) && (!perfumeImg.endsWith(".png")) && (!perfumeImg.endsWith(".gif"))) {
+      errors.push("Image URL must end with .jpg, .png, or .gif");
+    }
+    else if((!perfumeImg.startsWith("http://")) && (!perfumeImg.startsWith("https://"))) {
+      errors.push("Image URL must start with http:// or https://")
     }
     setValidationErrors(errors);
   }, [name, brand, masterPerfumer, perfumeImg]);
@@ -73,17 +85,19 @@ const PerfumeForm = () => {
   return (
     loggedInUser && (
       <div className="perfume-form-container">
-        <h1 className="add-perfume">Add a Perfume!</h1>
+        <h1 className="add-perfume">Add a Perfume</h1>
         <div className="error-message-container">
         <ul className="add-perfume-form-errors">
           {validationErrors.map((validationError) => (
-            <li key={validationError}>{validationError}</li>
+            <li className="error-message" key={validationError}>{validationError}</li>
           ))}
         </ul>
         </div>
         <form className="add-perfume-form" onSubmit={perfumeSubmitted}>
-          <label className="add-perfume-form-label">
-            Enter Name
+          
+          <label className="add-perfume-form-label"> Add Name </label>
+            
+            
             <input className="add-perfume-field"
               type="text"
               onChange={(e) => setName(e.target.value)}
@@ -91,9 +105,9 @@ const PerfumeForm = () => {
               placeholder="Blue de Chanel"
               name="name"
             />
-          </label>
+            
           <label className="add-perfume-form-label" >
-            Enter Brand
+            Add Brand </label>
             <input className="add-perfume-field"
               type="text"
               onChange={(e) => setBrand(e.target.value)}
@@ -101,9 +115,9 @@ const PerfumeForm = () => {
               placeholder="Chanel"
               name="brand"
             />
-          </label>
+          
           <label className="add-perfume-form-label">
-            Enter Perfumer
+            Add Perfumer </label>
             <input className="add-perfume-field"
               type="text"
               onChange={(e) => setMasterPerfumer(e.target.value)}
@@ -111,9 +125,9 @@ const PerfumeForm = () => {
               placeholder="Jacques Polge"
               name="masterPerfumer"
             />
-          </label>
+          
           <label className="add-perfume-form-label">
-            Enter Image URL
+            Add Image URL </label>
             <input className="add-perfume-field"
               type="text"
               onChange={(e) => setPerfumeImg(e.target.value)}
@@ -121,8 +135,8 @@ const PerfumeForm = () => {
               placeholder="https://www.theperfumeshop.com/-Boss-Bottled.jpg"
               name="perfumeImg"
             />
-          </label>
-          <button className="add-perfume-button" type="submit">Add Your New Perfume!</button>
+          
+          <button className="add-perfume-button" type="submit" disabled={validationErrors.length > 0}> Add Perfume</button>
         </form>
       </div>
     )

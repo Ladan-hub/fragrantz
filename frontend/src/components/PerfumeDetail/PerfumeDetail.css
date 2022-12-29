@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Garamond';
+    src: url('../../context/Garamond_[Fontsmagazine.com].ttf');
+  }
+
 .perfume-name {
-    font-family:'Courier New', Courier, monospace;
+    font-family: Garamond;
     font-weight:lighter;
     text-align: center;
     margin:  30px auto;
@@ -9,19 +14,19 @@
 .perfume-img {
     margin: auto;
     display: block;
-    height: 35%;
-    width: 35%;
+    height: 45%;
+    width: 45%;
 }
 
 .caption {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Garamond;
     font-weight: lighter;
 }
 
 .write-comment-button {
     background-color: #EDE1DA;
-   font-family: 'Courier New', Courier, monospace;
+    font-family: Garamond;
    padding: 15px 20px;
    font-weight: bold;
    text-align: center;

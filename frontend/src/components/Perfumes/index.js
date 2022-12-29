@@ -61,20 +61,21 @@ const Perfumes = () => {
                     </div>
                     
             </section>
-            <main className="root-container">
+            
                  
-                <main className="all-perfumes">
+                <main className="all-perfumes-container">
                    
                     {perfumes.map((perfume) => (
-                        <span className="container" key={perfume.id}>
-                        <img onClick={() => history.push(`/perfumes/${perfume.id}`)}
-                        className="perfume-image" key={perfume.id} src={perfume.perfumeImg} alt="This is the perfume"
-                        /> 
-                        </span>
+                        <main className="perfumes-container" key={perfume.id}>
+                            <div className="perfume-image-container">
+                        <img onClick={() => history.push(`/perfumes/${perfume.id}`)} className="perfume-image" key={perfume.id} src={perfume.perfumeImg} alt="This is the perfume" onError={event => {event.target.src = "https://library.tamu.edu/discovery/resources/images/default-thumbnail.jpg"}}/> 
+                        </div>
+                        </main>
+                        
                     ))}
-
+                    
                 </main>
-            </main>
+    
             </>
            
         )
