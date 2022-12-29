@@ -4,19 +4,18 @@
    text-align: center;
    cursor: pointer;
    border-radius: 0.20em;
-   /* display: inline-block; */
    border: none;
    margin-left: 20px;
    margin-right: 20px;
+   color: #404040;
 }
 
 .profile-dropdown-container {
     background-color: white;
-    border: 2px solid #EDE1DA;
     border-radius: 2px;
     position: absolute;
     top: 100px;
-    left: 143px;
+    right: 30px;
 }
 
 .logout-button {
@@ -27,7 +26,7 @@
     margin-top: 5px;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color: #404040;
     cursor: pointer;
     border-radius: 0.20em;
     border: none;

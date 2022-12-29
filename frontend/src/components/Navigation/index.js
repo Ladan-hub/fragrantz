@@ -25,23 +25,32 @@ function Navigation({ isLoaded }){
   // }
 
   return (
-    <section className='root'>
-    <div className='root-div'>
-    <ul className='buttons-container'>
-      <li>
-        <NavLink className="NavLink" exact to="/"><img className='logo-img' id="logo" src={logo} /></NavLink>
+    <>
+    <nav className='nav-bar'>
+
+    <div className='logo-container'>
+        <NavLink className="home-button-logo" exact to="/">
+          <img className='logo-img' id="logo" src={logo} />
+          </NavLink>
         {isLoaded && sessionLinks}
-        </li>
-        <li>
-        {loggedInUser ? <NavLink  className="NavLink-add-perfume" to="/new">Add Perfume</NavLink> : null}
-      </li>
-      {sessionUser ? <ProfileButton className="profile-button" user={sessionUser} /> : <>
-        <LoginFormModal />
-        <NavLink className="sign-up-button" to="/signup">Sign Up</NavLink>
-      </> }
-    </ul>
     </div>
+
+    <section className='add-perfume-become-a-host'>
+      <div>
+      {loggedInUser ? <NavLink  className="NavLink-add-perfume" to="/new">Add Perfume</NavLink> : null}
+      </div>
+      <ul>
+        <li className='li-elements-profile-button-loggedIn'>
+        {sessionUser ? <ProfileButton className="profile-button" user={sessionUser} /> :
+        <div>
+          <LoginFormModal />
+          <NavLink className="sign-up-button" to="/signup">Sign Up</NavLink>
+        </div> }
+        </li>
+      </ul>
     </section>
+    </nav>
+    </>
   );
 }
 

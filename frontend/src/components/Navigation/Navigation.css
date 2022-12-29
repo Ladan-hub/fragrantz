@@ -1,6 +1,32 @@
-.root {
-   background-color: #EDE1DA;
-   padding: 10px;
+@font-face {
+   font-family: 'Garamond';
+   src: url('../../context/Garamond_[Fontsmagazine.com].ttf');
+ }
+
+body {
+   margin: 0px;
+}
+
+
+.nav-bar{
+   position: sticky;
+   background-color: #F4F4F4;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   height:100px;
+}
+
+.logo-container{
+   position: absolute;
+   margin-right: 1100px;
+   margin-top: -10px;
+  
+}
+
+.logo-img{
+   height: 120px;
+   width: 130px;
 }
 
 
@@ -22,16 +48,13 @@
 
 } */
 
-.logo-img{
-   height: 80px;
-   width: 100px;
-}
+
 
 .NavLink {
   
    padding: 15px 20px;
    text-decoration: none;
-   color: black;
+   color: #404040;
    cursor: pointer;
    border-radius: 0.20em;
    /* display: flex;
@@ -40,20 +63,22 @@
 }
 
 .NavLink-add-perfume {
-   background-color: white;
-   font-family: 'Courier New', Courier, monospace;
-   padding: 15px 20px;
-   font-weight: bold;
-   font-size: 14px;
-   text-align: center;
+   font-family: Garamond;
+   font-size: 18px;
    text-decoration: none;
    color: black;
    cursor: pointer;
-   border-radius: 0.20em;
-   /* display: inline-block; */
-   display: flex;
-   flex-direction: column;
+   position: absolute;
+   margin-left: 500px;
+   margin-top: 40px;
 
+}
+
+.profile-button{
+   background-color: #F4F4F4;
+   position: absolute;
+   margin-left: 600px;
+   margin-top: 10px;
 }
 
 .sign-up-button {
@@ -64,7 +89,7 @@
    font-size: 14px;
    text-align: center;
    text-decoration: none;
-   color: black;
+   color: #404040;
    cursor: pointer;
    border-radius: 0.20em;
    display: inline-block;
@@ -74,10 +99,7 @@ ul {
   list-style-type: none;
 }
 
-.buttons-container {
-   display: flex;
-   align-items: center;
-}
+
 
 
 
