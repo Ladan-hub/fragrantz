@@ -62,13 +62,27 @@ const PerfumeDetail = () => {
 
   return (
     <>
-      <div>
-        <h1 className="perfume-name">{perfume?.name}</h1>
-        <img className="perfume-img" src={perfume?.perfumeImg} alt="perfume" />
-        <h2 className="caption">{perfume?.name}</h2>
-        <h2 className="caption">{perfume?.brand}</h2>
-        <h2 className="caption">Perfumer: {perfume?.masterPerfumer}</h2>
-        <section className="delete-edit">
+     
+        <section className="img-and-info">
+           {/* <div className="perfume-info-container"> */}
+          <div className="caption-container">
+        <h2 className="caption-name">{perfume?.name}</h2>
+        <h2 className="caption-brand">{perfume?.brand}</h2>
+        <h2 className="caption-perfumer">Perfumer: {perfume?.masterPerfumer}</h2>
+        </div>
+        
+          <div className="perfume-img-container">
+          <img className="perfume-img" src={perfume?.perfumeImg} alt="perfume" />
+          </div>
+        {/* <h1 className="perfume-name">{perfume?.name}</h1> */}
+       
+        {/* </div> */}
+        </section>
+
+
+
+
+        <span className="delete-edit">
           {perfume?.userId === logedInUser?.id ? (
             <button className="delete-perfume" onClick={deleteEventHandler}>
               Delete Perfume
@@ -79,16 +93,16 @@ const PerfumeDetail = () => {
               Edit Perfume
             </button>
           ) : null}
+          </span>
           {/* {logedInUser? <button className="write-comment-button" onClick={commentEventHandler}>Write Comment</button> : null} */}
-          <div id="add-comment-msg">
-            <h2>Add Your Comment</h2>
-          </div>
+          
+          {logedInUser ?<h2 className="add-comment-msg">Add Comment</h2>: null}
+  
           {logedInUser ? <CommentForm /> : null}
-        </section>
+        
         <section className="all-comments">
           <Comment />
         </section>
-      </div>
     </>
   );
 };

@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Garamond';
+    src: url('../../context/Garamond_[Fontsmagazine.com].ttf');
+  }
+
+
 .add-perfume {
-    font-family:'Courier New', Courier, monospace;
+    font-family: Garamond;
     font-weight:lighter;
     text-align: center;
     margin:  30px auto;
@@ -13,28 +19,31 @@
 .add-perfume-form {
     margin: auto;
     display: block;
+    background-color: #F4F4F4;
 }
 
 .add-perfume-form-label {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Garamond;
     font-size: 17px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .add-perfume-field {
-    background-color: white;
+    background-color: #F4F4F4;
     height: 20px;
-    padding: 10px 15px;
+    padding: 20px 15px;
     box-sizing: border-box;
-    border: 2px solid #EDE1DA;
+    border: 1px solid #D9D9D9;
     border-radius: 2px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Garamond;
     font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .add-perfume-button {
-    background-color: #EDE1DA;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #D9D9D9;
+    font-family: Garamond;
     padding: 15px 20px;
     font-weight: bold;
     text-align: center;
@@ -48,11 +57,15 @@
 }
 
 .error-message-container {
-    display: flex; 
+    display: flex;
     flex-direction: row; 
-    justify-content: center;
-
+    justify-content:center;
+   
 }
+
+/* .error-message{
+    padding: 10px;
+} */
 
 
 

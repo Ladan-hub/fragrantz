@@ -1,9 +1,21 @@
+@font-face {
+    font-family: 'Garamond';
+    src: url('../../context/Garamond_[Fontsmagazine.com].ttf');
+  }
+
+
 .write-comment {
-    font-family:'Courier New', Courier, monospace;
+    font-family: Garamond;
     font-weight:lighter;
     text-align: center;
     margin:  30px auto;
     display: block;
+}
+
+
+.error-message-container{
+  max-width: fit-content;
+  margin-left: 110px;
 }
 
 .error-messages {
@@ -12,10 +24,16 @@
     display: block;
 }
 
+.comment-div{
+  margin-top: 70px;
+}
+
+
 .comment-form {
     margin: auto;
     display: block;
     width: 80%;
+    background-color: #F4F4F4;
 }
 
 
@@ -25,25 +43,25 @@
   height: 150px;
   padding: 10px 15px;
   box-sizing: border-box;
-  border: 2px solid #EDE1DA;
+  border: 1.5px solid #D9D9D9;
   border-radius: 2px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Garamond;
   font-size: 20px;
 }
 
 .comment-submit-button {
-   background-color: #EDE1DA;
-   font-family: 'Courier New', Courier, monospace;
-   padding: 15px 20px;
-   font-weight: bold;
-   text-align: center;
-   color: black;
-   text-align: center;
-   cursor: pointer;
-   border-radius: 0.20em;
-   border: none;
-   margin: auto;
-   display: block;
+  background-color: #D9D9D9;
+  font-family: Garamond;
+  padding: 15px 20px;
+  text-align: center;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.20em;
+  border: none;
+  margin: auto;
+  display: block;
+  margin-top: 15px;
 }
 
 .comment-button{
