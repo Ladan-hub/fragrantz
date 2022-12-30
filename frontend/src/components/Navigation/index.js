@@ -42,7 +42,7 @@ function Navigation({ isLoaded }){
       <ul>
         <li className='li-elements-profile-button-loggedIn'>
         {sessionUser ? <ProfileButton className="profile-button" user={sessionUser} /> :
-        <div>
+        <div className='login-signup-buttons'>
           <LoginFormModal />
           <NavLink className="sign-up-button" to="/signup">Sign Up</NavLink>
         </div> }

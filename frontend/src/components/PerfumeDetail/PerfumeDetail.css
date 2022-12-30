@@ -3,6 +3,30 @@
     src: url('../../context/Garamond_[Fontsmagazine.com].ttf');
   }
 
+  body {
+    margin: 0px;
+    background-color: #f4f4f4;
+}
+
+
+.img-and-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.perfume-img-container{
+    margin-top: 40px;
+}
+
+.perfume-img{
+    width: 750px;
+    height: 700px;
+    margin-right: 60px;
+    margin-top: px;
+}
+
 .perfume-name {
     font-family: Garamond;
     font-weight:lighter;
@@ -11,17 +35,40 @@
     display: block;
 }
 
-.perfume-img {
-    margin: auto;
-    display: block;
-    height: 45%;
-    width: 45%;
+.caption-container{
+    margin-top: 40px;
+    margin-left: 110px;
 }
 
-.caption {
-    text-align: center;
+
+.caption-name {
+    text-align: left;
     font-family: Garamond;
     font-weight: lighter;
+    font-size:larger;
+    
+}
+.caption-brand {
+    text-align: left;
+    font-family: Garamond;
+    font-weight: lighter;
+    font-size:medium;
+    
+}
+.caption-perfumer {
+    text-align: left;
+    font-family: Garamond;
+    font-weight: lighter;
+    font-size:medium;
+    
+}
+
+
+.add-comment-msg{
+    max-width: fit-content;
+    margin-left: 150px;
+    font-family: Garamond;
+    position: absolute;
 }
 
 .write-comment-button {
@@ -40,36 +87,63 @@
    display: block;
 }
 
+.delete-edit{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
 .delete-perfume {
-    background-color: #EDE1DA;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #D9D9D9;
+    font-family: Garamond;
     padding: 15px 20px;
-    font-weight: bold;
-    text-align: center;
-    color: black;
-    text-align: center;
+    color: #404040;
     cursor: pointer;
     border-radius: 0.20em;
     border: none;
-    margin: auto;
-    display: block;
+    margin-top: 10px;
+    margin-left: 870px;
+    /* display: block; */
+   
 }
 
 .edit-perfume {
-    background-color: #EDE1DA;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #D9D9D9;
+    font-family: Garamond;
     padding: 15px 20px;
     font-weight: bold;
     text-align: center;
-    color: black;
-    text-align: center;
+    color: #404040;
     cursor: pointer;
     border-radius: 0.20em;
     border: none;
     margin: auto;
     margin-top: 10px;
-    display: block;
+    margin-right: 310px;
+
 }
+
+/* .perfume-img {
+    margin: auto;
+    display: block;
+    height: 45%;
+    width: 45%;
+    margin-right: 60px;
+    margin-top: 70px;
+} */
+
+/* .perfume-info-container{
+    background-color: rebeccapurple;
+    margin-top: 40px;
+    margin-right: 100px;
+
+    width:25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+} */
 
 
 

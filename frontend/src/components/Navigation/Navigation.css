@@ -81,11 +81,16 @@ body {
    margin-top: 10px;
 }
 
+
+.login-signup-buttons{
+   position: absolute;
+   margin-left: 400px;
+}
 .sign-up-button {
    background-color: white;
-   font-family: 'Courier New', Courier, monospace;
-   padding: 15px 20px;
+   font-family: Garamond;
    font-weight: bold;
+   padding: 15px 20px;
    font-size: 14px;
    text-align: center;
    text-decoration: none;
