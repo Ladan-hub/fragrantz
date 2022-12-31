@@ -33,6 +33,8 @@ module.exports = {
     options.tableName = 'Users';
     return queryInterface.bulkDelete(options, {
       username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
-    }, {});
+    }, {truncate: true,
+      cascade: true,
+      restartIdentity: true,});
   }
 };

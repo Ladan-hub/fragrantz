@@ -40,24 +40,26 @@ const Perfumes = () => {
                     </div>
             <div className="menu-items">
             <div className="menu-navlink-container">
-                       <NavLink className="menu-navlink" to="/">Woody</NavLink>
+                       <NavLink className="menu-navlink" to="/woody">Woody</NavLink>
                        </div>
                        <div className="menu-navlink-container">
-                       <NavLink className="menu-navlink" to="/">Citrus</NavLink>
-                       </div>
-                       
-                       <div className="menu-navlink-container">
-                       <NavLink className="menu-navlink" to="/">Floral</NavLink>
+                       <NavLink className="menu-navlink" to="/citrus">Citrus</NavLink>
                        </div>
                        <div className="menu-navlink-container">
-                       <NavLink className="menu-navlink" to="/">Leather</NavLink>
+                       <NavLink className="menu-navlink" to="/fresh">Fresh</NavLink>
                        </div>
                        <div className="menu-navlink-container">
-                       <NavLink className="menu-navlink" to="/">Aquatic</NavLink>
+                       <NavLink className="menu-navlink" to="/sweet">Sweet</NavLink>
                        </div>
                        <div className="menu-navlink-container">
+                       <NavLink className="menu-navlink" to="/floral">Floral</NavLink>
+                       </div>
+                       <div className="menu-navlink-container">
+                       <NavLink className="menu-navlink" to="/leather">Leather</NavLink>
+                       </div>
+                       {/* <div className="menu-navlink-container">
                        <NavLink className="menu-navlink" to="/">Gourmand</NavLink>
-                       </div>
+                       </div> */}
                     </div>
                     
             </section>

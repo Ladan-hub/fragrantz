@@ -35,7 +35,7 @@ const Comment = () => {
   };
 
   return (
-    <div>
+    <div className="comments-root-container">
       <h2 className="comment-label">Comments</h2>
       {commentsArr.map((comment) => (
         <div className="comments-container">

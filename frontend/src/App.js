@@ -9,7 +9,7 @@ import PerfumeDetail from "./components/PerfumeDetail";
 import PerfumeForm from "./components/CreatePerfumeForm/index";
 import EditForm from "./components/EditPerfumeForm";
 import CommentForm from "./components/CreateCommentForm";
-import Splash from "./components/SplashPage";
+// import Splash from "./components/SplashPage";
 import EditCommentForm from "./components/EditCommentForm";
 
 function App() {

@@ -5,14 +5,14 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     brand: DataTypes.STRING,
     masterPerfumer: DataTypes.STRING,
+    scentProfile: DataTypes.STRING,
+    description: DataTypes.STRING,
     perfumeImg: DataTypes.STRING
   }, {});
   Perfume.associate = function(models) {
     // associations can be defined here
     Perfume.belongsTo(models.User, {foreignKey: 'userId'})
     Perfume.hasMany(models.Comment, {foreignKey: 'perfumeId', onDelete: "cascade", hooks:true})
-
-
   };
   return Perfume;
 };

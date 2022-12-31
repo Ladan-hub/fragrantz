@@ -60,6 +60,9 @@ const EditCommentForm = () => {
         if (comment.length < 3) {
             errors.push("Comment must be at least 3 chatracters")
         }
+        else if (comment.length > 255)  {
+            errors.push("Comment must be less than 255 characters")
+        }
         setValidationErrors(errors)
     }, [comment])
 
@@ -67,15 +70,17 @@ const EditCommentForm = () => {
 
     return loggedInUser && (
         <div className="comment-div">
+            <div className="error-message-container">
             <ul className="error-messages">
                 {validationErrors.map((validationError) => (
                     <li key={validationError}>{validationError}</li>
                 ))}
             </ul>
+            </div>
             <form className="comment-form" onSubmit={editCommentSubmitted}>
                 <textarea className="comment-field" value={comment} name="comment" onChange={(e) => setComment(e.target.value)}>
                 </textarea>
-                <button className="comment-submit-button" type="submit">Submit!</button>
+                <button className="comment-submit-button" type="submit" disabled={validationErrors.length > 0}>Submit!</button>
             </form>
 
         </div>

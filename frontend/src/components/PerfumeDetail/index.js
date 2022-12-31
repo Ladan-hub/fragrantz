@@ -69,7 +69,11 @@ const PerfumeDetail = () => {
         <h2 className="caption-name">{perfume?.name}</h2>
         <h2 className="caption-brand">{perfume?.brand}</h2>
         <h2 className="caption-perfumer">Perfumer: {perfume?.masterPerfumer}</h2>
+        <p className="description">{perfume?.description}</p>
         </div>
+        
+          
+        
         
           <div className="perfume-img-container">
           <img className="perfume-img" src={perfume?.perfumeImg} alt="perfume" />
