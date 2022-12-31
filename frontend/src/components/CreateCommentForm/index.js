@@ -51,6 +51,9 @@ const CommentForm = () => {
         else if (comment.length < 3) {
             errors.push("Comment must be at least 3 chatracters")
         }
+        else if (comment.length > 255)  {
+            errors.push("Comment must be less than 255 characters")
+        }
         setValidationErrors(errors)
     }, [comment])
 
@@ -68,7 +71,7 @@ const CommentForm = () => {
             <form className="comment-form" onSubmit={commentSubmitted}>
                 <textarea className="comment-field" value={comment} name="comment" onChange={(e) => setComment(e.target.value)}>
                 </textarea>
-                <button className="comment-submit-button" type="submit">Submit</button>
+                <button className="comment-submit-button" type="submit" disabled={validationErrors.length > 0}>Submit</button>
             </form>
 
         </div>

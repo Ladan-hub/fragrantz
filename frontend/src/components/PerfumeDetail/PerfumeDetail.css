@@ -8,6 +8,11 @@
     background-color: #f4f4f4;
 }
 
+.comment-div{
+    
+    margin-top: 100px;
+}
+
 
 .img-and-info{
     display: flex;
@@ -63,10 +68,19 @@
     
 }
 
+.description{
+    margin-top: 50px;
+    width: 350px;
+    font-family: Garamond;
+    line-height: 26pt;
+}
+
+
 
 .add-comment-msg{
     max-width: fit-content;
     margin-left: 150px;
+    margin-top: 40px;
     font-family: Garamond;
     position: absolute;
 }

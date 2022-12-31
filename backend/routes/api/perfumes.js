@@ -50,7 +50,6 @@ router.get('/:id', asyncHandler(async (req,res) => {
         }
     })
     return res.json(perfume)
-    
 }));
 
 // POST uploading a perfume (CREATE)
@@ -83,6 +82,12 @@ router.delete("/delete", requireAuth, asyncHandler(async (req,res) => {
     await deletedPerfume.destroy()
     return res.json(deletedPerfume)
 }))
+
+
+// -- Category GET Routes -- 
+
+
+
 
 
 

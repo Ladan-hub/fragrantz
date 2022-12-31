@@ -11,7 +11,11 @@ const { requireAuth } = require("../../utils/auth");
 const commentValidations = [
     check('comment')
     .exists({checkFalsy: true})
-    .withMessage('Please provide a comment'),
+    .withMessage('Please provide a comment')
+    .isLength({min: 3})
+    .withMessage("Comment must be at least 3 characters")
+    .isLength({max: 255})
+    .withMessage("Comment must be at less than 255 characters"),
     handleValidationErrors
 ]
 

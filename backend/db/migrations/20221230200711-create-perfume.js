@@ -17,7 +17,7 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'Users' }
+        references: {model: 'Users'}
       },
       name: {
         allowNull: false,
@@ -30,6 +30,14 @@ module.exports = {
       masterPerfumer: {
         allowNull: false,
         type: Sequelize.STRING(250)
+      },
+      scentProfile: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      description: {
+        allowNull: false,
+        type: Sequelize.STRING(1000)
       },
       perfumeImg: {
         allowNull: false,

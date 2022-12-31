@@ -4,12 +4,14 @@
   }
 
 
+
 .comment-label {
     font-family: Garamond;
  
     text-align: center;
     max-width: fit-content;
-    margin-left: 140px;
+    margin-left: 145px;
+    margin-top: -150px;
 
 }
 

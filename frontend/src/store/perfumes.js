@@ -52,6 +52,7 @@ export const deletePerfume = (perfumeId) => {
 }
 
 
+
 // THUNK ACs:
 
 // Thunk AC for fetching all perfumes from the backend database
@@ -117,6 +118,7 @@ export const perfumeDelete = (perfume) => async dispatch => {
     return deletedPerfume;
   }
 }
+
 
 
 
