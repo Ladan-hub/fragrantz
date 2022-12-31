@@ -9,9 +9,15 @@ import PerfumeDetail from "./components/PerfumeDetail";
 import PerfumeForm from "./components/CreatePerfumeForm/index";
 import EditForm from "./components/EditPerfumeForm";
 import CommentForm from "./components/CreateCommentForm";
-// import Splash from "./components/SplashPage";
 import EditCommentForm from "./components/EditCommentForm";
 import WoodyPerfumes from "./components/Perfumes/woody";
+import SweetPerfumes from "./components/Perfumes/sweet";
+import CitrusPerfumes from "./components/Perfumes/citrus";
+import LeatherPerfumes from "./components/Perfumes/leather";
+import FreshPerfumes from "./components/Perfumes/fresh";
+import FloralPerfumes from "./components/Perfumes/floral";
+
+
 
 function App() {
   const loggedInUser = useSelector((state) => state.session.user);
@@ -47,6 +53,21 @@ function App() {
           </Route>
           <Route exact path="/woody">
             <WoodyPerfumes />
+          </Route>
+          <Route exact path="/sweet">
+            <SweetPerfumes />
+          </Route>
+          <Route exact path="/citrus">
+            <CitrusPerfumes />
+          </Route>
+          <Route exact path="/leather">
+            <LeatherPerfumes />
+          </Route>
+          <Route exact path="/fresh">
+            <FreshPerfumes />
+          </Route>
+          <Route exact path="/floral">
+            <FloralPerfumes />
           </Route>
           <Route exact path="/">
             <Perfume />
