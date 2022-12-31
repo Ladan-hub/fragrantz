@@ -11,6 +11,7 @@ import EditForm from "./components/EditPerfumeForm";
 import CommentForm from "./components/CreateCommentForm";
 // import Splash from "./components/SplashPage";
 import EditCommentForm from "./components/EditCommentForm";
+import WoodyPerfumes from "./components/Perfumes/woody";
 
 function App() {
   const loggedInUser = useSelector((state) => state.session.user);
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/woody">
+            <WoodyPerfumes />
           </Route>
           <Route exact path="/">
             <Perfume />
