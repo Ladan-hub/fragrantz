@@ -28,7 +28,6 @@ const FloralPerfumes = () => {
      //     history.push(`/perfumes/${perfumeId}`)
      // }
  
- 
      // if the user is logged in:
      
          return (
