@@ -44,13 +44,17 @@ const PerfumeForm = () => {
     } else if (name.length > 250) {
       errors.push("Name must be less than 250 characters");
     } else if (brand.length < 2) {
-      errors.push("Brand must be at least 2 characters ");
+      errors.push("Brand must be at least 2 characters");
     } else if (brand.length > 250) {
       errors.push("Brand must be less than 250 characters");
     } else if (masterPerfumer.length < 2) {
       errors.push("Perfumer must be at least 2 characters");
     } else if (masterPerfumer.length > 250) {
       errors.push("Perfumer must be less than 250 characters");
+    } else if (description.length < 10) {
+      errors.push("Description must be at least 10 characters");
+    } else if (description.length > 1000) {
+      errors.push("Description must be less than 1000 characters")
     } else if (perfumeImg.length < 10) {
       errors.push("Perfume image URL must be at least 10 characters");
     } else if (perfumeImg.length > 500) {
@@ -150,6 +154,8 @@ const PerfumeForm = () => {
             name="description"
           ></input>
 
+          {console.log("This is the description", description)}
+
           <label className="add-perfume-form-label">Add Image URL </label>
           <input
             className="add-perfume-field"
@@ -167,9 +173,9 @@ const PerfumeForm = () => {
               value={scentProfile}
               onChange={(e) => setScentProfile(e.target.value)}
             >
-              {SCENTPROFILES.map((scentProfile) => (
-                <option key={scentProfile} value={scentProfile}>
-                  {scentProfile}
+              {SCENTPROFILES.map((scent) => (
+                <option key={scent} value={scent}>
+                  {scent}
                 </option>
               ))}
             </select>
