@@ -19,6 +19,9 @@ const Comment = () => {
   // console.log("All perfume comments", commentsArr)
   // TO-DO: make sure targetComment is as specific as possible which comment as which user
 
+     // logged in user
+     const loggedInUser = useSelector(state => state.session.user)
+
   const history = useHistory();
   const dispatch = useDispatch();
   // event handler for delete button
@@ -34,7 +37,7 @@ const Comment = () => {
     history.push(`/perfumes/${perfumeId}/comments/${commentId}/edit`);
   };
 
-  return (
+  return loggedInUser && (
     <div className="comments-root-container">
       <h2 className="comment-label">Comments</h2>
       {commentsArr.map((comment) => (
