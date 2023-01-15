@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { addPerfumeThunk, createPerfume } from "../../store/perfumes";
+import { addPerfumeThunk } from "../../store/perfumes";
 import "./PerfumeForm.css";
 
 const SCENTPROFILES = [
@@ -101,7 +101,9 @@ const PerfumeForm = () => {
     setName("");
     setBrand("");
     setMasterPerfumer("");
+    setDescription("")
     setPerfumeImg("");
+    setScentProfile(SCENTPROFILES[0])
 
     history.push("/");
   };
