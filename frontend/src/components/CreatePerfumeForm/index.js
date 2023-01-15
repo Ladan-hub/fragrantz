@@ -36,43 +36,48 @@ const PerfumeForm = () => {
       name === "" &&
       brand === "" &&
       masterPerfumer === "" &&
-      perfumeImg === ""
+      description === "" &&
+      perfumeImg === "" &&
+      scentProfile === ""
     ) {
       errors.push("");
-    } else if (name.length < 2) {
+    } else if (name !== "" && name.length < 2) {
       errors.push("Name must be at least 2 characters");
     } else if (name.length > 250) {
       errors.push("Name must be less than 250 characters");
-    } else if (brand.length < 2) {
+    } else if ( brand !== "" && brand.length < 2) {
       errors.push("Brand must be at least 2 characters");
     } else if (brand.length > 250) {
       errors.push("Brand must be less than 250 characters");
-    } else if (masterPerfumer.length < 2) {
+    } else if (masterPerfumer !== "" && masterPerfumer.length < 2) {
       errors.push("Perfumer must be at least 2 characters");
     } else if (masterPerfumer.length > 250) {
       errors.push("Perfumer must be less than 250 characters");
-    } else if (description.length < 10) {
+    } else if (description !== "" && description.length < 10) {
       errors.push("Description must be at least 10 characters");
     } else if (description.length > 1000) {
       errors.push("Description must be less than 1000 characters")
-    } else if (perfumeImg.length < 10) {
+    } else if (perfumeImg !== "" && perfumeImg.length < 10) {
       errors.push("Perfume image URL must be at least 10 characters");
     } else if (perfumeImg.length > 500) {
       errors.push("Perfume image URL must be less than 500 characters");
     } else if (
+      perfumeImg !== "" &&
       !perfumeImg.endsWith(".jpg") &&
       !perfumeImg.endsWith(".png") &&
       !perfumeImg.endsWith(".gif")
     ) {
       errors.push("Image URL must end with .jpg, .png, or .gif");
     } else if (
+      perfumeImg !== "" &&
       !perfumeImg.startsWith("http://") &&
       !perfumeImg.startsWith("https://")
-    ) {
+    )
+     {
       errors.push("Image URL must start with http:// or https://");
-    }
+    } 
     setValidationErrors(errors);
-  }, [name, brand, masterPerfumer, perfumeImg]);
+  }, [name, brand, masterPerfumer, description, perfumeImg, scentProfile]);
 
   const dispatch = useDispatch();
 
@@ -83,7 +88,9 @@ const PerfumeForm = () => {
       name,
       brand,
       masterPerfumer,
+      description,
       perfumeImg,
+      scentProfile
     };
 
     dispatch(addPerfumeThunk(perfumeToCreate));
@@ -153,7 +160,6 @@ const PerfumeForm = () => {
             placeholder="A woody aromatic fragrance for men"
             name="description"
           ></input>
-
           {console.log("This is the description", description)}
 
           <label className="add-perfume-form-label">Add Image URL </label>
@@ -169,13 +175,13 @@ const PerfumeForm = () => {
           <label className="add-perfume-form-label">
             Add Scent Profile
             <select
-              id="select"
-              value={scentProfile}
+            id="select"
               onChange={(e) => setScentProfile(e.target.value)}
+              value={scentProfile}
             >
-              {SCENTPROFILES.map((scent) => (
-                <option key={scent} value={scent}>
-                  {scent}
+              {SCENTPROFILES.map((scentProfile) => (
+                <option key={scentProfile} value={scentProfile}>
+                  {scentProfile}
                 </option>
               ))}
             </select>

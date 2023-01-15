@@ -58,9 +58,9 @@ body {
  
 }
 
-.perfumes-container{
-    padding: 3px;
-}
+/* .perfumes-container{
+    padding: 1px;
+} */
 
 .perfume-image {
     width: 410px;
@@ -68,6 +68,7 @@ body {
     cursor: pointer;
     margin-right: 5px;
     margin-bottom: 5px;
+    padding: 7px;
     
   
 }
