@@ -2,13 +2,13 @@
 
 # Share your favorite scents with the world!
 
-Fragrantz is a Flickr clone that allows perfume collectors and perfume lovers to upload images of their favorite perfumes, browser other perfume images and share comments on them.
+Fragrantz is a perfume encyclopedia inspired by Cereal Magazine's minimalistic User Interface. It allows perfume collectors and perfume lovers to upload images of their favorite perfumes, browse other perfume images and share their thoughts with each other.
 
-Live Link to Fragrantz: https://aa-fragrantz.herokuapp.com/
+Live Link to Fragrantz: https://fragrantz.herokuapp.com/
 
 # About 
 
-Fragrantz is a full stack application that lets you upload pictures of the fragrances in your fragrance collection. Other users can also view your pictures and comment on them. You can also view pictures that other users have uploaded and comment.
+Fragrantz is a full stack application that lets you upload pictures of your favorite fragrances. Other users can view your pictures and comment on them. You can also view other user's fragrances and leave comments on them. 
 
 # Downloading the app 
 
