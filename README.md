@@ -6,9 +6,24 @@ Fragrantz is a perfume encyclopedia inspired by Cereal Magazine's minimalistic U
 
 Live Link to Fragrantz: https://fragrantz.herokuapp.com/
 
-# About 
+# Splash Page View 
 
-Fragrantz is a full stack application that lets you upload pictures of your favorite fragrances. Other users can view your pictures and comment on them. You can also view other user's fragrances and leave comments on them. 
+<img width="1440" alt="Screen Shot 2023-01-20 at 8 49 58 PM" src="https://user-images.githubusercontent.com/77522504/213763181-043b4ec0-258c-4522-b684-13f2c9048732.png">
+
+<img width="1440" alt="Screen Shot 2023-01-20 at 8 50 36 PM" src="https://user-images.githubusercontent.com/77522504/213763325-2288ae5b-0e69-4a7a-97a4-b90aeac6c047.png">
+
+# Perfume Detail Page View
+
+<img width="1433" alt="Screen Shot 2023-01-20 at 8 52 07 PM" src="https://user-images.githubusercontent.com/77522504/213763600-81a276fa-482e-468c-9868-288850923d78.png">
+
+# Comment Form 
+
+<img width="1440" alt="Screen Shot 2023-01-20 at 8 52 55 PM" src="https://user-images.githubusercontent.com/77522504/213763775-69b3fe1a-08c8-4345-8226-4ce04b993aa1.png">
+
+# Submit Perfume Form
+
+<img width="1440" alt="Screen Shot 2023-01-20 at 8 53 18 PM" src="https://user-images.githubusercontent.com/77522504/213763845-58ea342a-52e8-4f84-8483-b6979afb51a1.png">
+
 
 # Downloading the app 
 
