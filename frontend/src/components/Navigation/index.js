@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import SearchBar from '../Search/Search';
 import './Navigation.css';
 import logo from "../../context/apple-touch-icon.png"
 
@@ -34,6 +35,10 @@ function Navigation({ isLoaded }){
           </NavLink>
         {isLoaded && sessionLinks}
     </div>
+
+    <section className='search-bar'>
+      <SearchBar />
+    </section>
 
     <section className='add-perfume-become-a-host'>
       <div>
