@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { fetchDetail } from "../../store/perfumes";
 import "./Search.css";
 
 const SearchBar = () => {
