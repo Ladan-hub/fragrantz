@@ -14,7 +14,7 @@ const SearchBar = () => {
             name="search-input"
             placeholder="Search perfumes by name"
             value={searchInput}
-            onChange={e => (e.target.value)}
+            onChange={e => setSearchInput(e.target.value)}
             />
            
             
