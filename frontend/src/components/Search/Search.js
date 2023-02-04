@@ -13,7 +13,7 @@ const SearchBar = () => {
   const search = (e) => {
     e.preventDefault();
     perfumes.map(perfume => {
-        if (searchInput === perfume.name) {
+        if (searchInput === perfume.name || searchInput === perfume.name.toLowerCase() || searchInput === perfume.name.toUpperCase()) {
             history.push(`/perfumes/${perfume.id}`)
         }
     })
