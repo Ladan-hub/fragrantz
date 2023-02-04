@@ -12,14 +12,19 @@ const SearchBar = () => {
   const history = useHistory()
   const search = (e) => {
     e.preventDefault();
+    reset();
     perfumes.map(perfume => {
         if (searchInput === perfume.name || searchInput === perfume.name.toLowerCase() || searchInput === perfume.name.toUpperCase()) {
             history.push(`/perfumes/${perfume.id}`)
+            
         }
     })
- 
-
+    
   };
+
+  const reset = () => {
+    setSearchInput("")
+  }
 
   return (
     <div className="search-container">
