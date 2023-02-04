@@ -15,9 +15,8 @@ const SearchBar = () => {
     reset();
     perfumes.map((perfume) => {
         if (searchInput === perfume.name || searchInput === perfume.name.toLowerCase() || searchInput === perfume.name.toUpperCase()) {
-            history.push(`/perfumes/${perfume.id}`)
-            
-        }
+            history.push(`/perfumes/${perfume.id}`)  
+        } 
     });
   };
 

@@ -73,7 +73,7 @@ function App() {
             <Perfume />
           </Route>
           <Route>
-            <h1>Page Not Found</h1>
+            <h1 style={{display: "flex", justifyContent: "center"}}>Page Not Found</h1>
           </Route>
         </Switch>
       )}
