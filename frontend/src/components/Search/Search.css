@@ -1,8 +1,17 @@
 .search-container{
-    margin-top: 33px;
+
     position: absolute;
     width: 500px;
-    right: 488px;
+    right: 510px;
+    bottom: 20px;
+}
+
+.search-form{
+    height: 0px;
+    width: 500px;
+    padding-bottom: 50px;
+    
+
 }
 
 .search-input{
