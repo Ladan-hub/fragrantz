@@ -6,25 +6,23 @@ import "./Search.css";
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
-  const perfumes = useSelector(state => Object.values(state.perfumes))
+  const perfumes = useSelector((state) => Object.values(state.perfumes));
+  console.log('THESE ARE THE PERFUMES', perfumes)
 
-
-  const history = useHistory()
+  const history = useHistory();
   const search = (e) => {
     e.preventDefault();
     reset();
-    perfumes.map(perfume => {
-        if (searchInput === perfume.name || searchInput === perfume.name.toLowerCase() || searchInput === perfume.name.toUpperCase()) {
-            history.push(`/perfumes/${perfume.id}`)
-            
-        }
-    })
-    
+    perfumes.map((perfume) => {
+      if (searchInput.length > 1) {
+        console.log("Somethig has been searched");
+      }
+    });
   };
 
   const reset = () => {
-    setSearchInput("")
-  }
+    setSearchInput("");
+  };
 
   return (
     <div className="search-container">
