@@ -16,6 +16,7 @@ import CitrusPerfumes from "./components/Perfumes/citrus";
 import LeatherPerfumes from "./components/Perfumes/leather";
 import FreshPerfumes from "./components/Perfumes/fresh";
 import FloralPerfumes from "./components/Perfumes/floral";
+import SeachResults from "./components/Search/SearchResults";
 
 
 
@@ -71,6 +72,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Perfume />
+          </Route>
+          <Route exact path="/results">
+            <SeachResults />
           </Route>
           <Route>
             <h1 style={{display: "flex", justifyContent: "center"}}>Page Not Found</h1>

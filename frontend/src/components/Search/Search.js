@@ -11,13 +11,12 @@ const SearchBar = () => {
 
 const dispatch = useDispatch();
   const history = useHistory();
+
   const search = (e) => {
     e.preventDefault();
-    const perfumeToSearch = {
-      searchInput,
-    };
-    dispatch(loadSearchedPerfumesThunk(perfumeToSearch))
-    history.push(`/perfumes/${perfumeToSearch.id}`)
+    reset();
+    dispatch(loadSearchedPerfumesThunk(searchInput))
+    history.push(`/results`)
   };
 
   const reset = () => {

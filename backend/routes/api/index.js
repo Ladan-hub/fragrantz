@@ -4,13 +4,12 @@ const sessionRouter = require('./session.js');
 const userRouter = require('./users.js');
 const perfumesRouter = require('./perfumes.js')
 const commentRouter = require ('./comments.js')
-const searchRouter = require('./search.js')
+
 
 router.use('/session', sessionRouter)
 router.use('/users', userRouter);
 router.use('/perfumes', perfumesRouter);
 router.use('/comments', commentRouter);
-router.use('/search', searchRouter);
 // you already have the /perfumes route on line 9
 //router.use('/perfumes/:id', perfumesRouter);
 
