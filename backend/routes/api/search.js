@@ -7,7 +7,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 const { requireAuth } = require("../../utils/auth");
 
 
-router.post('/search', asyncHandler(async(req,res)=> {
+router.post('/', asyncHandler(async(req,res)=> {
     const {searchInput} = req.body;
 
     const perfumes = await db.Perfume.findAll({
@@ -21,3 +21,5 @@ router.post('/search', asyncHandler(async(req,res)=> {
     return res.json(perfumes)
 
 }))
+
+module.exports = router;

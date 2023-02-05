@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./Search.css";
 
@@ -7,16 +7,13 @@ const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
   const perfumes = useSelector((state) => Object.values(state.perfumes));
 
-
+const dispatch = useDispatch();
   const history = useHistory();
   const search = (e) => {
     e.preventDefault();
     reset();
-    perfumes.map((perfume) => {
-        if (searchInput === perfume.name || searchInput === perfume.name.toLowerCase() || searchInput === perfume.name.toUpperCase()) {
-            history.push(`/perfumes/${perfume.id}`)  
-        } 
-    });
+    
+
   };
 
   const reset = () => {

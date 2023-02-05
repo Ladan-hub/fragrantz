@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 // Action Type Variables
 
+const LOAD_SEARCHED_PERFUMES = "searchedPerfumes/LOAD";
 const LOAD_PERFUMES = "perfumes/LOAD";
 const LOAD_DETAIL = "perfume/DETAIL";
 const CREATE = "perfume/CREATE";
@@ -9,6 +10,15 @@ const DELETE = "perfume/DELETE";
 const UPDATE = "perfume/UPDATE"
 
 // ACs:
+
+
+// AC for loading searched perfumes 
+export const loadSearchedPerfumes = (perfumes) => {
+  return {
+    type: LOAD_SEARCHED_PERFUMES,
+    perfumes
+  }
+}
 
 // AC for loading perfumes
 export const loadPerfumes = (perfumes) => {
@@ -54,6 +64,18 @@ export const deletePerfume = (perfumeId) => {
 
 
 // THUNK ACs:
+
+
+// Thunk AC for fetching SEARCHED perfumes from the backend
+export const loadSearchedPerfumesThunk = () => async (dispatch) => {
+  const response = await csrfFetch("/api/search/");
+  if (response.ok) {
+    const perfumes = await response.json();
+    dispatch(loadSearchedPerfumes(perfumes));
+    return perfumes;
+  }
+}
+
 
 // Thunk AC for fetching all perfumes from the backend database
 export const fetchPerfumes = () => async (dispatch) => {
@@ -153,6 +175,13 @@ const perfumeReducer = (state = {}, action) => {
       delete newState[action.perfumeId]
       return newState;
 
+    }
+    case LOAD_SEARCHED_PERFUMES : {
+      const perfumesLoaded = {};
+      action.perfumes.forEach((perfume) => {
+        perfumesLoaded[perfume.id] = perfume;
+      });
+      return perfumesLoaded;
     }
 
     default:
