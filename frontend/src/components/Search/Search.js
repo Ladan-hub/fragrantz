@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { loadSearchedPerfumesThunk } from "../../store/perfumes";
 import "./Search.css";
 
 const SearchBar = () => {
+  const loggedInUser = useSelector((state) => state.session.user);
   const [searchInput, setSearchInput] = useState("");
-  const perfumes = useSelector((state) => Object.values(state.perfumes));
+  
 
 const dispatch = useDispatch();
   const history = useHistory();
   const search = (e) => {
     e.preventDefault();
-    reset();
-    
-
+    const perfumeToSearch = {
+      searchInput,
+    };
+    dispatch(loadSearchedPerfumesThunk(perfumeToSearch))
+    history.push(`/perfumes/${perfumeToSearch.id}`)
   };
 
   const reset = () => {
