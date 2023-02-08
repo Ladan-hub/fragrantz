@@ -16,8 +16,9 @@ const dispatch = useDispatch();
     e.preventDefault();
     reset();
     console.log(searchInput)
-    // Dispatch the thunk here 
     dispatch(loadSearchedPerfumeThunk(searchInput))
+
+    
     // history.push(`/results`)
   };
 

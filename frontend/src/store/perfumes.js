@@ -69,6 +69,7 @@ export const deletePerfume = (perfumeId) => {
 
 // Thunk AC for fetching the searched perfume 
 export const loadSearchedPerfumeThunk = (searchInput) => async (dispatch) => {
+  
   const response = await csrfFetch('/api/perfumes/search', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
