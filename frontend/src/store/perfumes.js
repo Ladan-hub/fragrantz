@@ -7,19 +7,17 @@ const LOAD_PERFUMES = "perfumes/LOAD";
 const LOAD_DETAIL = "perfume/DETAIL";
 const CREATE = "perfume/CREATE";
 const DELETE = "perfume/DELETE";
-const UPDATE = "perfume/UPDATE"
+const UPDATE = "perfume/UPDATE";
 
 // ACs:
-
 
 // AC for loading searched perfumes
 export const loadSearchedPerfume = (perfume) => {
   return {
     type: LOAD_SEARCHED_PERFUME,
-    perfume
-  }
-}
-
+    perfume,
+  };
+};
 
 // AC for loading perfumes
 export const loadPerfumes = (perfumes) => {
@@ -37,51 +35,48 @@ export const loadDetail = (perfume) => {
   };
 };
 
-// AC for CREATE 
+// AC for CREATE
 export const createPerfumeAction = (perfume) => {
   return {
-      type: CREATE,
-      perfume
-  }
-}
+    type: CREATE,
+    perfume,
+  };
+};
 
 // AC for UPDATE (updatePerfume)
 export const updatePerfume = (perfume) => {
   return {
     type: UPDATE,
-    perfume
-  }
-}
+    perfume,
+  };
+};
 
 // AC for DELETE (deletePerfume)
 
 export const deletePerfume = (perfumeId) => {
   return {
     type: DELETE,
-    perfumeId
-  }
-}
-
-
+    perfumeId,
+  };
+};
 
 // THUNK ACs:
 
-
-// Thunk AC for fetching the searched perfume 
+// Thunk AC for fetching the searched perfume
 export const loadSearchedPerfumeThunk = (searchInput) => async (dispatch) => {
-  
-  const response = await csrfFetch('/api/perfumes/search', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(searchInput)
-  })
+  console.log("HELLO")
+  const response = await csrfFetch("/api/perfumes/search", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(searchInput),
+  });
+  console.log(response);
   if (response.ok) {
     const searchedPerfume = await response.json();
     dispatch(loadSearchedPerfume(searchedPerfume));
     return searchedPerfume;
   }
-}
-
+};
 
 // Thunk AC for fetching all perfumes from the backend database
 export const fetchPerfumes = () => async (dispatch) => {
@@ -104,52 +99,47 @@ export const fetchDetail = (perfumeId) => async (dispatch) => {
 };
 
 // Thunk AC CREATE
-export const addPerfumeThunk = (perfumeToCreate) => async dispatch => {
-  const response = await csrfFetch ('/api/perfumes', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(perfumeToCreate)
-  })
+export const addPerfumeThunk = (perfumeToCreate) => async (dispatch) => {
+  const response = await csrfFetch("/api/perfumes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(perfumeToCreate),
+  });
   if (response.ok) {
     const newlyCreatedPerfume = await response.json();
     dispatch(createPerfumeAction(newlyCreatedPerfume));
     return newlyCreatedPerfume;
-  };
+  }
 };
 
-// Thunk AC UPDATE 
-export const perfumeUpdate = (perfume) => async dispatch => {
-  
-  const response = await csrfFetch (`/api/perfumes/${perfume.id}`, {
+// Thunk AC UPDATE
+export const perfumeUpdate = (perfume) => async (dispatch) => {
+  const response = await csrfFetch(`/api/perfumes/${perfume.id}`, {
     method: "PUT",
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(perfume)
-  })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(perfume),
+  });
   if (response.ok) {
     const perfume = await response.json();
     //console.log(perfume)
     dispatch(updatePerfume(perfume));
     return perfume;
   }
-}
+};
 
 // Thunk AC DELETE (perfumeDelete)
 
-export const perfumeDelete = (perfume) => async dispatch => {
-  const response = await csrfFetch('/api/perfumes/delete', {
-    method: 'DELETE',
-    body: JSON.stringify(perfume)
-  })
+export const perfumeDelete = (perfume) => async (dispatch) => {
+  const response = await csrfFetch("/api/perfumes/delete", {
+    method: "DELETE",
+    body: JSON.stringify(perfume),
+  });
   if (response.ok) {
     const deletedPerfume = await response.json();
-    dispatch(deletePerfume(deletedPerfume.id))
+    dispatch(deletePerfume(deletedPerfume.id));
     return deletedPerfume;
   }
-}
-
-
-
-
+};
 
 //Reducer
 const perfumeReducer = (state = {}, action) => {
@@ -162,31 +152,29 @@ const perfumeReducer = (state = {}, action) => {
       return perfumesLoaded;
     }
     case LOAD_DETAIL: {
-      const detailLoaded = {...state};
+      const detailLoaded = { ...state };
       detailLoaded[action.perfume.id] = action.perfume;
-      return detailLoaded; 
+      return detailLoaded;
     }
     case CREATE: {
       // const newState = {...state};
       // newState[action.perfume.id] = action.perfume
       // return newState;
-      return { ...state, [action.perfume.id]: action.perfume}
+      return { ...state, [action.perfume.id]: action.perfume };
     }
     case UPDATE: {
-      const newState = {...state};
-      newState[action.perfume.id] = action.perfume
+      const newState = { ...state };
+      newState[action.perfume.id] = action.perfume;
     }
     case DELETE: {
-      const newState = {...state};
-      delete newState[action.perfumeId]
+      const newState = { ...state };
+      delete newState[action.perfumeId];
       return newState;
-
     }
     case LOAD_SEARCHED_PERFUME: {
-      const detailLoaded = {...state};
+      const detailLoaded = { ...state };
       detailLoaded[action.perfume.id] = action.perfume;
-      return detailLoaded; 
-
+      return detailLoaded;
     }
 
     default:
