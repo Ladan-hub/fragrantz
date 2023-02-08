@@ -7,15 +7,14 @@ const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
   const perfumes = useSelector((state) => Object.values(state.perfumes));
 
-
   const history = useHistory();
   const search = (e) => {
     e.preventDefault();
     reset();
     perfumes.map((perfume) => {
-        if (searchInput === perfume.name || searchInput === perfume.name.toLowerCase() || searchInput === perfume.name.toUpperCase()) {
-            history.push(`/perfumes/${perfume.id}`)  
-        } 
+      if (searchInput.toUpperCase() === perfume.name.toUpperCase()) {
+        history.push(`/perfumes/${perfume.id}`);
+      }
     });
   };
 
