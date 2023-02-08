@@ -37,21 +37,7 @@ const perfumeValidations = [
 
 // POST search for perfumes 
 
-router.post(
-    '/search',
-    asyncHandler(async (req, res) => {
-      
-  
-      const perfumes = await db.Perfume.findOne({
-        where: {
-            name: req.body.searchInput
-        },
-      });
-  
-      return res.json(perfumes);
-    })
-  );
-  
+
 
 // GET all perfumes (READ)
 router.get('/', asyncHandler(async function(req,res) {
@@ -99,50 +85,6 @@ router.delete("/delete", requireAuth, asyncHandler(async (req,res) => {
     await deletedPerfume.destroy()
     return res.json(deletedPerfume)
 }))
-
-
-// -- Category GET Routes -- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// router.delete("/delete", requireAuth, asyncHandler(async(req,res) => {
-//     const perfume = await db.Perfume.findByPk(req.body.id)
-//     await perfume.destroy();
-//     return res.json(req.body.id)
-// }))
-
-// router.get('/delete', asyncHandler(async (req,res) => {
-//     const perfume = await db.Perfume.findOne({
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-//     return res.json(perfume)
-    
-// }));
-
-
-
-
-
 
 
 module.exports = router;

@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import perfumeReducer from './perfumes';
 import commentReducer from './comments';
+import searchReducer from './search';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     perfumes: perfumeReducer,
-    comments: commentReducer
+    comments: commentReducer,
+    search: searchReducer,
 });
 
 let enhancer;
