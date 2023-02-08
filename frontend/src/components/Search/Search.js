@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { loadSearchedPerfumesThunk } from "../../store/search";
 import "./Search.css";
 
 const SearchBar = () => {
@@ -16,7 +15,6 @@ const dispatch = useDispatch();
     e.preventDefault();
     reset();
     console.log(searchInput)
-    dispatch(loadSearchedPerfumesThunk(searchInput))
     // history.push(`/results`)
   };
 

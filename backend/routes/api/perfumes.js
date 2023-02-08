@@ -37,6 +37,18 @@ const perfumeValidations = [
 
 // POST search for perfumes 
 
+router.post('/search', asyncHandler(async function(req,res) {
+    const {searchInput} = req.body;
+    const perfume = await db.Perfume.findOne({
+        where: {
+            name: {
+                [Op.iLike]: `%${searchInput}%`
+            }
+        }
+    })
+    return res.json(perfume);
+}))
+
 
 
 // GET all perfumes (READ)
