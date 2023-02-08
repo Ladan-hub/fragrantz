@@ -17,7 +17,7 @@ const dispatch = useDispatch();
     reset();
     console.log(searchInput)
     dispatch(loadSearchedPerfumesThunk(searchInput))
-    history.push(`/results`)
+    // history.push(`/results`)
   };
 
   const reset = () => {
