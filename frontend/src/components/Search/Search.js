@@ -16,6 +16,9 @@ const SearchBar = () => {
      if (searchInput.toUpperCase() === perfume.name.toUpperCase()) {
         history.push(`/perfumes/${perfume.id}`);
       } 
+
+      // if search input is equal to any of the perfume names in out database ==> we take the user to that perfume's detail page
+      // what if the perfume name in our searchInput does not exist in our database? 
       
     });
   };
