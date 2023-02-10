@@ -12,9 +12,11 @@ const SearchBar = () => {
     e.preventDefault();
     reset();
     perfumes.map((perfume) => {
-      if (searchInput.toUpperCase() === perfume.name.toUpperCase()) {
+  
+     if (searchInput.toUpperCase() === perfume.name.toUpperCase()) {
         history.push(`/perfumes/${perfume.id}`);
-      }
+      } 
+      
     });
   };
 
