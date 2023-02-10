@@ -192,7 +192,7 @@ const PerfumeForm = () => {
           <button
             className="add-perfume-button"
             type="submit"
-            disabled={validationErrors.length > 0}
+            disabled={validationErrors.length > 0 || name === "" || brand === "" || masterPerfumer === "" || description === "" || perfumeImg === "" || scentProfile === ""}
           >
             {" "}
             Add Perfume
