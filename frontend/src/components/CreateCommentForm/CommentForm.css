@@ -16,6 +16,8 @@
 .error-message-container{
   max-width: fit-content;
   margin-left: 110px;
+  position: absolute;
+  left: 20px;
 }
 
 .error-messages {

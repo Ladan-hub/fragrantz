@@ -61,7 +61,7 @@ const CommentForm = () => {
 
     return loggedInUser && (
         <div className="comment-div">
-            <span className="error-message-container">
+            <span class="error-message-container">
             <ul className="error-messages">
                 {validationErrors.map((validationError) => (
                     <li key={validationError}>{validationError}</li>
