@@ -182,7 +182,7 @@ const PerfumeForm = () => {
               value={scentProfile}
             >
               {SCENTPROFILES.map((scentProfile) => (
-                <option key={scentProfile} value={scentProfile}>
+                <option id="select-option" key={scentProfile} value={scentProfile}>
                   {scentProfile}
                 </option>
               ))}
