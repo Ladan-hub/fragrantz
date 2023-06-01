@@ -14,6 +14,17 @@
     margin-left: 8px;
 }
 
+#sign-up-error-ul {
+    padding: 0; /* Remove default padding */
+}
+
+#sign-up-error-ul li {
+    text-align: left;
+    padding: 0; /* Remove default padding */
+    margin-left: 10px; /* Remove default margin */
+}
+
+
 .signup-field {
     background-color: #F4F4F4;
     width: 100%;

@@ -34,8 +34,8 @@ function SignupFormPage() {
   return (
     <div className="signup-form-container">
     <form className="signup-form" onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      <ul id="sign-up-error-ul">
+        {errors.map((error, idx) => <li id="sign-up-error-li" key={idx}>{error}</li>)}
       </ul>
       <label className='signup-form-label'>
         Email
