@@ -40,17 +40,7 @@ body {
    margin-left: 85px; */
 }
 
-.NavLink-add-perfume {
-   font-family: Garamond;
-   font-size: 18px;
-   text-decoration: none;
-   color: black;
-   cursor: pointer;
-   position: absolute;
-   margin-left: 500px;
-   margin-top: 40px;
 
-}
 
 /* .profile-button{
    background-color: #F4F4F4;
@@ -88,14 +78,27 @@ ul {
    .logo-container {
     
       margin-left: 50px;
-      margin-right: auto; /* Push it to the left side of its containing element */
-    }
+      margin-right: auto;  
+    } 
 
-    .li-elements-profile-button-loggedIn{
+   .li-elements-profile-button-loggedIn{
       list-style: none;
       align-items: flex-end;
       margin-right: 80px;
-  }
+  } 
+
+  .NavLink-add-perfume {
+   font-family: Garamond;
+   font-size: 18px;
+   text-decoration: none;
+   color: black;
+   cursor: pointer;
+   position: absolute;
+   margin-left: -10%;
+   margin-top: 50px;
+
+}
+
 
 }
 

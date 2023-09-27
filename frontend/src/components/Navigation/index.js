@@ -27,8 +27,8 @@ function Navigation({ isLoaded }){
       <SearchBar />
     </section>
 
-    <section className='add-perfume-become-a-host'>
-      <div>
+    
+      <div className='add-perfume-container'>
       {loggedInUser ? <NavLink  className="NavLink-add-perfume" to="/new">Add Perfume</NavLink> : null}
       </div>
       <ul>
@@ -40,7 +40,7 @@ function Navigation({ isLoaded }){
         </div> }
         </li>
       </ul>
-    </section>
+    
     </nav>
     </>
   );
