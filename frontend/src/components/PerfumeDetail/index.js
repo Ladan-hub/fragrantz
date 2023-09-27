@@ -65,7 +65,7 @@ const PerfumeDetail = () => {
      
         <section className="img-and-info">
            {/* <div className="perfume-info-container"> */}
-          <div className="caption-container">
+        <div className="caption-container">
         <h2 className="caption-name">{perfume?.name}</h2>
         <h2 className="caption-brand">{perfume?.brand}</h2>
         <h2 className="caption-perfumer">Perfumer: {perfume?.masterPerfumer}</h2>

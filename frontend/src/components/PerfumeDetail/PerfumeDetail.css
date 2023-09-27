@@ -17,8 +17,9 @@
 .img-and-info{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 
 
 .perfume-img-container{
@@ -75,8 +76,6 @@
     line-height: 26pt;
 }
 
-
-
 .add-comment-msg{
     max-width: fit-content;
     margin-left: 150px;
@@ -104,9 +103,8 @@
 .delete-edit{
     display: flex;
     flex-direction: row;
-    
-
 }
+
 
 .delete-perfume {
     background-color: #D9D9D9;
@@ -118,7 +116,6 @@
     border: none;
     margin-top: 10px;
     margin-left: 870px;
-    /* display: block; */
    
 }
 
@@ -138,27 +135,26 @@
 
 }
 
-/* .perfume-img {
-    margin: auto;
-    display: block;
-    height: 45%;
-    width: 45%;
-    margin-right: 60px;
-    margin-top: 70px;
-} */
+@media screen and (min-width: 769px) {
 
-/* .perfume-info-container{
-    background-color: rebeccapurple;
-    margin-top: 40px;
-    margin-right: 100px;
+    .delete-edit{
+    position: absolute;
+    right: 20px; /* Adjust this for horizontal positioning from the right edge */
+    top: 880px;
+    transform: translateY(-50%); /* Vertically center the container */
+    }
 
-    width:25%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    .delete-edit .delete-perfume {
+        margin-right: 5px; /* Add margin to the right of the delete button */
+        padding: 15px 20px;
+      }
+      
+      .delete-edit .edit-perfume {
+        margin-left: 5px; /* Add margin to the left of the edit button */
+        padding: 15px 20px;
+      }
 
-} */
-
+}
 
 
 
