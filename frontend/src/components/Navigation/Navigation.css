@@ -17,38 +17,16 @@ body {
    height:100px;
 }
 
-.logo-container{
+/* .logo-container{
    position: absolute;
    margin-right: 1100px;
    margin-top: -10px;
-  
-}
+} */
 
 .logo-img{
    height: 120px;
    width: 130px;
 }
-
-
-
-
-/* .NavLink{
-   background-color: white;
-   font-family: 'Courier New', Courier, monospace;
-   padding: 15px 20px;
-   font-weight: bold;
-   font-size: 14px;
-   text-align: center;
-   text-decoration: none;
-   color: black;
-   text-align: center;
-   cursor: pointer;
-   border-radius: 0.20em;
-   display: inline-block;
-
-} */
-
-
 
 .NavLink {
   
@@ -74,18 +52,18 @@ body {
 
 }
 
-.profile-button{
+/* .profile-button{
    background-color: #F4F4F4;
    position: absolute;
    margin-left: 600px;
    margin-top: 10px;
-}
+} */
 
 
-.login-signup-buttons{
+/* .login-signup-buttons{
    position: absolute;
    margin-left: 400px;
-}
+} */
 .sign-up-button {
    background-color: white;
    font-family: Garamond;
@@ -102,6 +80,23 @@ body {
 
 ul {
   list-style-type: none;
+}
+
+
+@media screen and (min-width: 769px) {
+
+   .logo-container {
+    
+      margin-left: 50px;
+      margin-right: auto; /* Push it to the left side of its containing element */
+    }
+
+    .li-elements-profile-button-loggedIn{
+      list-style: none;
+      align-items: flex-end;
+      margin-right: 80px;
+  }
+
 }
 
 

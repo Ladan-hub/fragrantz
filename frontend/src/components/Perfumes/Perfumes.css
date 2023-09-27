@@ -12,8 +12,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    /* background-color: aqua; */
-
 }
 
 
@@ -26,7 +24,6 @@ body {
 
 
 .menu-items{
-    /* background-color: rebeccapurple; */
     margin-top: 40px;
     margin-right: 60px;
 
@@ -50,17 +47,12 @@ body {
 }
 
 .all-perfumes-container{
-    /* margin: 0.7%; */
     margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
  
 }
-
-/* .perfumes-container{
-    padding: 1px;
-} */
 
 .perfume-image {
     width: 410px;
@@ -79,15 +71,6 @@ body {
     margin: 3%;
 
 }
-
-
-/* .greeting-message {
-    font-family:'Courier New', Courier, monospace;
-    font-size: 40px;
-    font-weight: lighter;
-    padding: 10px; 
-    margin: 20px
-} */
 
 
 

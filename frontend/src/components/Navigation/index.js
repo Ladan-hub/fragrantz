@@ -12,19 +12,6 @@ function Navigation({ isLoaded }){
   const loggedInUser = useSelector(state => state.session.user);
 
   let sessionLinks;
-  // if (sessionUser) {
-  //   sessionLinks = (
-  //     <ProfileButton className="profile-button" user={sessionUser} />
-  //   );
-  // } else {
-  //   sessionLinks = (
-  //     <>
-  //       <LoginFormModal />
-  //       <NavLink className="sign-up-button" to="/signup">Sign Up</NavLink>
-  //     </>
-  //   );
-  // }
-
   return (
     <>
     <nav className='nav-bar'>

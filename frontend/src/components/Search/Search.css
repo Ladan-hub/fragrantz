@@ -10,10 +10,19 @@
     height: 0px;
     width: 500px;
     padding-bottom: 50px;
-    
-
 }
 
 .search-input{
     height: 40px;
+}
+
+
+@media screen and (min-width: 769px) {
+    .search-container {
+        position: absolute;
+        width: 500px;
+        left: 47%; /* Center horizontally by moving it to the middle */
+        transform: translateX(-50%); /* Adjust for element width */
+        bottom: 20px;
+      }
 }
